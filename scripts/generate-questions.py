@@ -223,6 +223,109 @@ SECTION_POOLS = {
     'breathing': BREATHING_MUSCLES,
 }
 
+# ── TARGETED DISTRACTORS ──
+# Research-backed: when the correct answer matches a key, use these specific distractors
+# These are the most commonly confused items per the research
+TARGETED_DISTRACTORS = {
+    # Joint types
+    'fibrous': ['Cartilaginous', 'Synovial', 'Ligamentous'],
+    'cartilaginous': ['Fibrous', 'Synovial', 'Ligamentous'],
+    'synovial': ['Cartilaginous', 'Fibrous', 'Ligamentous'],
+    'diarthrotic': ['Amphiarthrotic', 'Synarthrotic', 'Syndesmotic'],
+    'synarthrotic': ['Diarthrotic', 'Amphiarthrotic', 'Syndesmotic'],
+    'amphiarthrotic': ['Diarthrotic', 'Synarthrotic', 'Syndesmotic'],
+    'diarthrotic, synarthrotic, amphiarthrotic': ['Synarthrotic, diarthrotic, amphiarthrotic', 'Diarthrotic, amphiarthrotic, synarthrotic', 'Amphiarthrotic, diarthrotic, synarthrotic'],
+    # Directions
+    'distal': ['Proximal', 'Inferior', 'Lateral'],
+    'proximal': ['Distal', 'Superior', 'Medial'],
+    'medial': ['Lateral', 'Anterior', 'Proximal'],
+    'lateral': ['Medial', 'Posterior', 'Distal'],
+    'anterior': ['Posterior', 'Ventral', 'Superficial'],
+    'posterior': ['Anterior', 'Dorsal', 'Deep'],
+    # Movements
+    'sideways movement toward the midline of the body': ['Sideways movement away from the midline of the body', 'Circular movement of a limb', 'Bending movement that decreases the angle between parts'],
+    'abducting': ['Adducting', 'Extending', 'Rotating'],
+    'adducting': ['Abducting', 'Flexing', 'Rotating'],
+    'forward and backward movement': ['Sideways movement', 'Rotational movement', 'Circular movement'],
+    # Contraction types
+    'contracts without getting shorter or longer': ['Muscle shortens as it overcomes resistance', 'Muscle lengthens while maintaining tension', 'Muscle contracts at a constant speed'],
+    'isotonic concentric': ['Isotonic eccentric', 'Isometric', 'Isokinetic'],
+    'isotonic eccentric': ['Isotonic concentric', 'Isometric', 'Isokinetic'],
+    'isometric': ['Isotonic concentric', 'Isotonic eccentric', 'Isokinetic'],
+    # Forearm muscles - antagonist/adjacent swaps
+    'brachialis': ['Biceps brachii', 'Brachioradialis', 'Triceps brachii'],
+    'biceps brachii': ['Brachialis', 'Brachioradialis', 'Coracobrachialis'],
+    'brachioradialis': ['Brachialis', 'Biceps brachii', 'Pronator teres'],
+    'triceps brachii': ['Biceps brachii', 'Brachialis', 'Anconeus'],
+    # Forearm landmarks - adjacent swaps
+    'the ulnar tuberosity': ['Radial tuberosity', 'Coronoid process of ulna', 'Olecranon process'],
+    'ulnar tuberosity': ['Radial tuberosity', 'Coronoid process of ulna', 'Olecranon process'],
+    'radial tuberosity': ['Ulnar tuberosity', 'Coronoid process of ulna', 'Styloid process of radius'],
+    'olecranon process': ['Coronoid process of ulna', 'Radial tuberosity', 'Lateral epicondyle'],
+    'coronoid process': ['Coracoid process', 'Olecranon process', 'Radial tuberosity'],
+    # Scapula muscles
+    'pectoralis minor origin': ['Serratus anterior origin', 'Pectoralis major origin', 'Rhomboid minor origin'],
+    'medial border of the scapula': ['Lateral border of the scapula', 'Spine of the scapula', 'Superior angle of the scapula'],
+    'levator scapulae': ['Rhomboid minor', 'Upper trapezius', 'Serratus anterior'],
+    'serratus anterior': ['Rhomboid major', 'Pectoralis minor', 'Levator scapulae'],
+    # Shoulder muscles
+    'deltoids': ['Latissimus dorsi', 'Pectoralis major', 'Teres major'],
+    'anterior deltoids': ['Middle deltoid', 'Posterior deltoid', 'Pectoralis major'],
+    'origin of anterior deltoids': ['Origin of middle deltoids', 'Insertion of anterior deltoids', 'Origin of pectoralis major'],
+    'latissimus dorsi': ['Teres major', 'Posterior deltoid', 'Infraspinatus'],
+    'supraspinatus': ['Infraspinatus', 'Subscapularis', 'Teres minor'],
+    'infraspinatus': ['Supraspinatus', 'Teres minor', 'Subscapularis'],
+    'subscapularis': ['Infraspinatus', 'Supraspinatus', 'Teres minor'],
+    'abduction of the humerus': ['Adduction of the humerus', 'Flexion of the humerus', 'External rotation of the humerus'],
+    'greater tubercle of humerus': ['Lesser tubercle of humerus', 'Deltoid tuberosity', 'Intertubercular groove'],
+    'lesser tubercle of humerus': ['Greater tubercle of humerus', 'Deltoid tuberosity', 'Bicipital groove'],
+    # Knee muscles
+    'flexion of the knee and extension of the hip': ['Extension of the knee and flexion of the hip', 'Flexion of the knee and flexion of the hip', 'Extension of the knee and extension of the hip'],
+    'tibial tuberosity': ['Head of fibula', 'Medial condyle of tibia', 'Lateral condyle of tibia'],
+    'semimembranosus': ['Semitendinosus', 'Biceps femoris', 'Gracilis'],
+    'semitendinosus': ['Semimembranosus', 'Biceps femoris', 'Sartorius'],
+    'biceps femoris': ['Semitendinosus', 'Semimembranosus', 'Rectus femoris'],
+    'rectus femoris': ['Vastus lateralis', 'Vastus medialis', 'Vastus intermedius'],
+    # Ankle muscles
+    'gastrocnemius': ['Soleus', 'Tibialis posterior', 'Plantaris'],
+    'gastrocnemius (lateral head)': ['Gastrocnemius (medial head)', 'Soleus', 'Plantaris'],
+    'soleus': ['Gastrocnemius', 'Tibialis posterior', 'Peroneus longus'],
+    'tibialis anterior': ['Tibialis posterior', 'Peroneus longus', 'Extensor digitorum longus'],
+    'peroneus longus': ['Peroneus brevis', 'Tibialis anterior', 'Tibialis posterior'],
+    # Hip muscles
+    'adductor magnus': ['Adductor longus', 'Adductor brevis', 'Gracilis'],
+    'adductor longus': ['Adductor magnus', 'Adductor brevis', 'Pectineus'],
+    'acetabulum': ['Greater trochanter', 'Obturator foramen', 'Iliac fossa'],
+    'gluteus maximus': ['Gluteus medius', 'Gluteus minimus', 'Piriformis'],
+    'gluteus medius': ['Gluteus minimus', 'Gluteus maximus', 'Tensor fasciae latae'],
+    'piriformis': ['Obturator internus', 'Gemellus superior', 'Quadratus femoris'],
+    'psoas major': ['Iliacus', 'Rectus femoris', 'Tensor fasciae latae'],
+    'iliacus': ['Psoas major', 'Rectus femoris', 'Pectineus'],
+    'tensor fasciae latae': ['Gluteus medius', 'Sartorius', 'Rectus femoris'],
+    'greater trochanter': ['Lesser trochanter', 'Intertrochanteric crest', 'Gluteal tuberosity'],
+    'lesser trochanter': ['Greater trochanter', 'Intertrochanteric line', 'Linea aspera'],
+    'ischial tuberosity': ['Ischial spine', 'AIIS', 'Pubic symphysis'],
+    # Neck muscles
+    'manubrium of the sternum': ['Body of the sternum', 'Xiphoid process', 'Medial clavicle'],
+    'sternocleidomastoid': ['Splenius capitis', 'Anterior scalene', 'Levator scapulae'],
+    'scalenes': ['Sternocleidomastoid', 'Levator scapulae', 'Splenius capitis'],
+    'splenius capitis': ['Sternocleidomastoid', 'Semispinalis capitis', 'Splenius cervicis'],
+    'mastoid process': ['Transverse processes of C1-C4', 'External occipital protuberance', 'Superior nuchal line'],
+    # Trunk muscles
+    'quadratus lumborum': ['Erector spinae', 'External obliques', 'Internal obliques'],
+    'external obliques': ['Internal obliques', 'Transversus abdominis', 'Rectus abdominis'],
+    'internal obliques': ['External obliques', 'Transversus abdominis', 'Rectus abdominis'],
+    'laterally flex the trunk and rotate it to the same side': ['Laterally flex the trunk and rotate it to the opposite side', 'Flex the trunk and rotate it to the same side', 'Extend the trunk and rotate it to the same side'],
+    'laterally flex the trunk and rotate it to the opposite side': ['Laterally flex the trunk and rotate it to the same side', 'Flex the trunk and rotate it to the opposite side', 'Extend the trunk and rotate it to the opposite side'],
+    'origin of external obliques': ['Insertion of external obliques', 'Origin of internal obliques', 'Origin of transversus abdominis'],
+    'rectus abdominis': ['External obliques', 'Transversus abdominis', 'Internal obliques'],
+    # Breathing muscles
+    'all answers are correct': ['Only the first answer is correct', 'Only the first two answers are correct', 'None of the answers are correct'],
+    'diaphragm': ['External intercostals', 'Internal intercostals', 'Scalenes'],
+    'internal intercostals': ['External intercostals', 'Diaphragm', 'Transversus abdominis'],
+    'external intercostals': ['Internal intercostals', 'Diaphragm', 'Serratus anterior'],
+}
+
 # Collect all correct answers per section for cross-question distractors
 section_answers = {}
 for q in raw['questions']:
@@ -272,8 +375,14 @@ def classify_answer(answer, pool):
 
 def get_distractors(question, correct_answer, section_id, all_correct_in_section):
     """Generate 3 plausible wrong answers for a question, matched by category."""
-    pool = SECTION_POOLS.get(section_id, {})
+    # Check targeted overrides first (research-backed best distractors)
     correct_lower = correct_answer.lower().strip()
+    if correct_lower in TARGETED_DISTRACTORS:
+        targeted = TARGETED_DISTRACTORS[correct_lower]
+        if len(targeted) >= 3:
+            return targeted[:3]
+
+    pool = SECTION_POOLS.get(section_id, {})
 
     # Classify the correct answer
     answer_category = classify_answer(correct_answer, pool)
