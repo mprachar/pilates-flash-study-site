@@ -1145,7 +1145,7 @@
     {
       "id": 70,
       "section": "forearm",
-      "question": "[Image not available in source] The bony landmark shown is which of the following?",
+      "question": "The bony landmark shown is which of the following?",
       "type": "single",
       "correctAnswers": [
         "Coracoid process"
@@ -1156,7 +1156,7 @@
         "Olecranon process"
       ],
       "explanation": "The correct answer is: Coracoid process",
-      "image": null
+      "image": "image10.jpeg"
     },
     {
       "id": 71,
@@ -1771,7 +1771,7 @@
     {
       "id": 109,
       "section": "knee",
-      "question": "[Image not available in source] Which of the following muscles inserts on the bony landmark shown?",
+      "question": "Which of the following muscles inserts on the bony landmark shown?",
       "type": "single",
       "correctAnswers": [
         "Semimembranosus"
@@ -1819,7 +1819,7 @@
     {
       "id": 112,
       "section": "knee",
-      "question": "[Image not available in source] Which of the following muscles inserts on the bony landmark shown?",
+      "question": "Which of the following muscles inserts on the bony landmark shown?",
       "type": "single",
       "correctAnswers": [
         "Biceps femoris"
@@ -1830,7 +1830,7 @@
         "Rectus femoris"
       ],
       "explanation": "The correct answer is: Biceps femoris",
-      "image": null
+      "image": "image34.jpeg"
     },
     {
       "id": 113,
@@ -2699,7 +2699,7 @@
     {
       "id": 167,
       "section": "neck",
-      "question": "[Image not available in source] The image shows which of the following muscles?",
+      "question": "The image shows which of the following muscles?",
       "type": "single",
       "correctAnswers": [
         "Scalenes"
@@ -2710,7 +2710,7 @@
         "Splenius capitis"
       ],
       "explanation": "The correct answer is: Scalenes",
-      "image": null
+      "image": "image44.jpeg"
     },
     {
       "id": 168,
@@ -2747,7 +2747,7 @@
     {
       "id": 170,
       "section": "neck",
-      "question": "[Image not available in source] The image shows the origin of which muscle?",
+      "question": "The image shows the origin of which muscle?",
       "type": "single",
       "correctAnswers": [
         "Splenius cervicis"

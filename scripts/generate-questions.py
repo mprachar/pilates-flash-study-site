@@ -574,6 +574,30 @@ for start, end, slug, name in sections_def:
 
         del q['_startRow']
 
+    # ── SHARED IMAGE ASSIGNMENTS ──
+    # Some questions reference "the image shows" / "bony landmark shown" but the XLSX
+    # only embeds the image once at a nearby question's row. These manual overrides
+    # assign the correct shared image based on anatomy cross-referencing.
+    SHARED_IMAGES = {
+        # Q text contains "bony landmark shown" → Coracoid process; image10 shows same landmark
+        ('forearm', 'Coracoid process'): 'image10.jpeg',
+        # Q text contains "bony landmark shown" → Biceps femoris inserts on head of fibula
+        ('knee', 'Biceps femoris'): 'image34.jpeg',
+        # Q text contains "image shows" → Scalenes; image44 is the scalenes image
+        ('neck', 'Scalenes'): 'image44.jpeg',
+    }
+    for q in questions_in_section:
+        if q.get('image'):
+            continue
+        q_text = q.get('question', '').lower()
+        if 'image' not in q_text and 'shown' not in q_text:
+            continue
+        for ans in q['answers']:
+            key = (slug, ans)
+            if key in SHARED_IMAGES:
+                q['image'] = SHARED_IMAGES[key]
+                break
+
     parsed_sections.append({'id': slug, 'name': name, 'questionCount': len(questions_in_section)})
     parsed_questions.extend(questions_in_section)
 
