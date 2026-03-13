@@ -182,14 +182,20 @@
 
   function updateStartButton() {
     const count = state.selectedSections.size;
+    const isFlash = state.format === 'flash';
     if (count === 0) {
       btnStartQuiz.disabled = true;
-      btnStartQuiz.textContent = 'Select sections to start';
+      btnStartQuiz.textContent = isFlash ? 'Select sections for flash cards' : 'Select sections to start';
     } else {
       btnStartQuiz.disabled = false;
-      const qCount = getFilteredQuestions().length;
-      btnStartQuiz.textContent = `Start (${qCount} question${qCount !== 1 ? 's' : ''})`;
+      const qCount = isFlash ? getAllSectionQuestions().length : getFilteredQuestions().length;
+      const label = isFlash ? 'Start Flash Cards' : 'Start Quiz';
+      btnStartQuiz.textContent = `${label} (${qCount} card${qCount !== 1 ? 's' : ''})`;
     }
+  }
+
+  function getAllSectionQuestions() {
+    return state.questions.filter((q) => state.selectedSections.has(q.section));
   }
 
   function getFilteredQuestions() {
@@ -213,7 +219,9 @@
 
   // ── START QUIZ ──
   function startQuiz(questions) {
-    if (!questions) questions = getFilteredQuestions();
+    if (!questions) {
+      questions = state.format === 'flash' ? getAllSectionQuestions() : getFilteredQuestions();
+    }
     if (questions.length === 0) {
       alert(
         state.studyMode === 'new'
@@ -568,11 +576,18 @@
   btnResetProgress.addEventListener('click', resetProgress);
 
   // Format toggle (Quiz vs Flash Cards)
+  const modeToggle = document.querySelector('.mode-toggle');
   document.querySelectorAll('.format-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.format-btn').forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
       state.format = btn.id === 'btnFormatFlash' ? 'flash' : 'quiz';
+      // Hide mode filter for flash cards (always shows all)
+      if (state.format === 'flash') {
+        modeToggle.classList.add('hidden');
+      } else {
+        modeToggle.classList.remove('hidden');
+      }
       updateStartButton();
     });
   });
