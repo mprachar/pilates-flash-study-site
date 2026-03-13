@@ -55,6 +55,35 @@ body {
   margin-top: 4px;
 }
 
+/* Format Toggle (Quiz vs Flash Cards) */
+.format-toggle {
+  display: flex;
+  gap: 4px;
+  background: var(--primary);
+  border-radius: var(--radius-sm);
+  padding: 3px;
+  margin-bottom: 10px;
+}
+
+.format-btn {
+  flex: 1;
+  padding: 10px 4px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.format-btn.active {
+  background: var(--card-bg);
+  color: var(--primary);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
 /* Mode Toggle */
 .mode-toggle {
   display: flex;
@@ -443,6 +472,121 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+/* ── FLASHCARD SCREEN ── */
+
+.flash-card {
+  perspective: 1000px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 250px;
+}
+
+.flash-card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 250px;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flash-card.flipped .flash-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flash-card-front,
+.flash-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 250px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.flash-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Make both sides expand to content */
+.flash-card-front,
+.flash-card-back {
+  position: relative;
+}
+
+.flash-card.flipped .flash-card-front {
+  visibility: hidden;
+  position: absolute;
+}
+
+.flash-card:not(.flipped) .flash-card-back {
+  visibility: hidden;
+  position: absolute;
+}
+
+.flash-card-front .question-text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  justify-content: center;
+}
+
+.flash-hint {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  margin-top: 16px;
+  opacity: 0.7;
+}
+
+.flash-back-question {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.flash-answer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flash-answer p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--correct);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.flash-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.flash-nav-btn {
+  flex: 1;
+}
+
+.flash-counter {
+  text-align: center;
+  margin-top: 12px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
 }
 
 /* ── LIGHTBOX ── */

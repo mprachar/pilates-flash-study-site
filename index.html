@@ -17,6 +17,11 @@
         <p class="subtitle">Certification Exam Prep</p>
       </header>
 
+      <div class="format-toggle">
+        <button id="btnFormatQuiz" class="format-btn active">Quiz</button>
+        <button id="btnFormatFlash" class="format-btn">Flash Cards</button>
+      </div>
+
       <div class="mode-toggle">
         <button id="btnStudyNew" class="mode-btn active">New Questions</button>
         <button id="btnStudyAll" class="mode-btn">All Questions</button>
@@ -53,6 +58,47 @@
       </div>
 
       <button id="btnNext" class="btn btn-primary hidden">Next Question</button>
+    </div>
+
+    <!-- FLASHCARD SCREEN -->
+    <div id="flashScreen" class="screen hidden">
+      <div class="quiz-header">
+        <button id="flashBtnBack" class="btn-icon" aria-label="Back">&larr;</button>
+        <span id="flashProgress" class="quiz-progress-text"></span>
+        <span id="flashSection" class="quiz-section-label"></span>
+      </div>
+      <div class="progress-bar">
+        <div id="flashProgressFill" class="progress-fill"></div>
+      </div>
+
+      <div id="flashCard" class="flash-card" role="button" tabindex="0" aria-label="Tap to flip card">
+        <div class="flash-card-inner">
+          <div class="flash-card-front">
+            <div id="flashImage" class="question-image" style="display:none;">
+              <img src="" alt="Question diagram" id="flashImg" loading="lazy">
+            </div>
+            <p id="flashQuestion" class="question-text"></p>
+            <p class="flash-hint">Tap to reveal answer</p>
+          </div>
+          <div class="flash-card-back">
+            <div id="flashBackImage" class="question-image" style="display:none;">
+              <img src="" alt="Question diagram" id="flashBackImg" loading="lazy">
+            </div>
+            <p id="flashBackQuestion" class="flash-back-question"></p>
+            <div class="flash-answer">
+              <p id="flashAnswer"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flash-nav">
+        <button id="flashBtnPrev" class="btn btn-outline flash-nav-btn">Previous</button>
+        <button id="flashBtnNext" class="btn btn-primary flash-nav-btn">Next</button>
+      </div>
+      <div class="flash-counter">
+        <span id="flashCounterText"></span>
+      </div>
     </div>
 
     <!-- RESULTS SCREEN -->

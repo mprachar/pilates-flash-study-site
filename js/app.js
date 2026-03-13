@@ -7,9 +7,11 @@
     sections: [],
     selectedSections: new Set(),
     studyMode: 'new', // 'new', 'all', 'missed'
+    format: 'quiz', // 'quiz' or 'flash'
     queue: [],
     currentIndex: 0,
     answered: false,
+    flashFlipped: false,
     session: { correct: 0, total: 0, missed: [], bySection: {} },
   };
 
@@ -40,6 +42,22 @@
   const btnStudyMissedResults = $('btnStudyMissedResults');
   const btnStudyAgain = $('btnStudyAgain');
   const btnBackHome = $('btnBackHome');
+  const flashScreen = $('flashScreen');
+  const flashCard = $('flashCard');
+  const flashProgress = $('flashProgress');
+  const flashSection = $('flashSection');
+  const flashProgressFill = $('flashProgressFill');
+  const flashImage = $('flashImage');
+  const flashImg = $('flashImg');
+  const flashQuestion = $('flashQuestion');
+  const flashBackImage = $('flashBackImage');
+  const flashBackImg = $('flashBackImg');
+  const flashBackQuestion = $('flashBackQuestion');
+  const flashAnswer = $('flashAnswer');
+  const flashBtnBack = $('flashBtnBack');
+  const flashBtnPrev = $('flashBtnPrev');
+  const flashBtnNext = $('flashBtnNext');
+  const flashCounterText = $('flashCounterText');
   const lightbox = $('lightbox');
   const lightboxImg = $('lightboxImg');
 
@@ -110,7 +128,7 @@
 
   // ── SCREENS ──
   function showScreen(screen) {
-    [homeScreen, quizScreen, resultsScreen].forEach((s) => s.classList.add('hidden'));
+    [homeScreen, quizScreen, resultsScreen, flashScreen].forEach((s) => s.classList.add('hidden'));
     screen.classList.remove('hidden');
     window.scrollTo(0, 0);
   }
@@ -209,10 +227,16 @@
     state.queue = shuffle(questions);
     state.currentIndex = 0;
     state.answered = false;
+    state.flashFlipped = false;
     state.session = { correct: 0, total: 0, missed: [], bySection: {} };
 
-    showScreen(quizScreen);
-    renderQuestion();
+    if (state.format === 'flash') {
+      showScreen(flashScreen);
+      renderFlashcard();
+    } else {
+      showScreen(quizScreen);
+      renderQuestion();
+    }
   }
 
   // ── RENDER QUESTION ──
@@ -358,6 +382,64 @@
     }
   }
 
+  // ── FLASHCARD MODE ──
+  function renderFlashcard() {
+    const q = state.queue[state.currentIndex];
+    state.flashFlipped = false;
+    flashCard.classList.remove('flipped');
+
+    // Progress
+    flashProgress.textContent = `${state.currentIndex + 1} / ${state.queue.length}`;
+    flashSection.textContent = sectionName(q.section);
+    flashProgressFill.style.width = `${((state.currentIndex + 1) / state.queue.length) * 100}%`;
+
+    // Front: question + image
+    if (q.image) {
+      flashImg.src = 'images/' + q.image;
+      flashImg.alt = 'Diagram for: ' + q.question;
+      flashImage.style.display = '';
+      flashBackImg.src = 'images/' + q.image;
+      flashBackImg.alt = flashImg.alt;
+      flashBackImage.style.display = '';
+    } else {
+      flashImage.style.display = 'none';
+      flashBackImage.style.display = 'none';
+    }
+
+    flashQuestion.textContent = q.question;
+
+    // Back: question (smaller) + answer
+    flashBackQuestion.textContent = q.question;
+    flashAnswer.textContent = q.correctAnswer;
+
+    // Nav state
+    flashBtnPrev.disabled = state.currentIndex === 0;
+    flashCounterText.textContent = `Card ${state.currentIndex + 1} of ${state.queue.length}`;
+
+    window.scrollTo(0, 0);
+  }
+
+  function flipFlashcard() {
+    state.flashFlipped = !state.flashFlipped;
+    flashCard.classList.toggle('flipped');
+  }
+
+  function flashNext() {
+    if (state.currentIndex < state.queue.length - 1) {
+      state.currentIndex++;
+      renderFlashcard();
+    } else {
+      renderHome();
+    }
+  }
+
+  function flashPrev() {
+    if (state.currentIndex > 0) {
+      state.currentIndex--;
+      renderFlashcard();
+    }
+  }
+
   // ── LIGHTBOX ──
   function openLightbox(src, alt) {
     lightboxImg.src = src;
@@ -409,6 +491,16 @@
 
   btnResetProgress.addEventListener('click', resetProgress);
 
+  // Format toggle (Quiz vs Flash Cards)
+  document.querySelectorAll('.format-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.format-btn').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.format = btn.id === 'btnFormatFlash' ? 'flash' : 'quiz';
+      updateStartButton();
+    });
+  });
+
   // Mode toggle
   document.querySelectorAll('.mode-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -433,12 +525,48 @@
   btnStudyAgain.addEventListener('click', () => startQuiz());
   btnBackHome.addEventListener('click', renderHome);
 
+  // Flashcard events
+  flashCard.addEventListener('click', (e) => {
+    // Don't flip if tapping an image (let lightbox handle it)
+    if (e.target.tagName === 'IMG') return;
+    flipFlashcard();
+  });
+  flashBtnBack.addEventListener('click', () => {
+    if (confirm('Leave this session?')) renderHome();
+  });
+  flashBtnNext.addEventListener('click', flashNext);
+  flashBtnPrev.addEventListener('click', flashPrev);
+  flashImg.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openLightbox(flashImg.src, flashImg.alt);
+  });
+  flashBackImg.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openLightbox(flashBackImg.src, flashBackImg.alt);
+  });
+
   // Lightbox
   questionImg.addEventListener('click', () => openLightbox(questionImg.src, questionImg.alt));
   lightbox.addEventListener('click', closeLightbox);
 
   // Keyboard shortcuts
   document.addEventListener('keydown', (e) => {
+    // Flashcard mode
+    if (!flashScreen.classList.contains('hidden')) {
+      if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        flipFlashcard();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        flashNext();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        flashPrev();
+      }
+      return;
+    }
+
+    // Quiz mode
     if (quizScreen.classList.contains('hidden')) return;
 
     if (!state.answered) {
