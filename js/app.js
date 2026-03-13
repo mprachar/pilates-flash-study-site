@@ -12,6 +12,7 @@
     currentIndex: 0,
     answered: false,
     flashFlipped: false,
+    multiSelected: new Set(),
     session: { correct: 0, total: 0, missed: [], bySection: {} },
   };
 
@@ -243,6 +244,7 @@
   function renderQuestion() {
     const q = state.queue[state.currentIndex];
     state.answered = false;
+    state.multiSelected = new Set();
 
     // Progress
     quizProgress.textContent = `${state.currentIndex + 1} / ${state.queue.length}`;
@@ -259,35 +261,112 @@
     }
 
     // Question text
-    questionText.textContent = q.question;
+    const isMulti = q.type === 'multi' && q.correctAnswers.length > 1;
+    const questionLabel = isMulti ? q.question + (q.question.includes('Select all') ? '' : ' (Select all that apply)') : q.question;
+    questionText.textContent = questionLabel;
 
     // Answers: shuffle correct + wrong
+    const correctSet = new Set(q.correctAnswers.map((a) => a.toLowerCase().trim()));
     const allAnswers = shuffle([
-      { text: q.correctAnswer, isCorrect: true },
+      ...q.correctAnswers.map((a) => ({ text: a, isCorrect: true })),
       ...q.wrongAnswers.map((w) => ({ text: w, isCorrect: false })),
     ]);
 
-    const letters = ['A', 'B', 'C', 'D'];
+    const letters = 'ABCDEFGH'.split('');
     answersContainer.innerHTML = allAnswers
       .map(
         (a, i) => `
-      <button class="answer-btn" data-correct="${a.isCorrect}" data-text="${escapeAttr(a.text)}">
-        <span class="answer-letter">${letters[i]}</span>
+      <button class="answer-btn${isMulti ? ' multi-select' : ''}" data-correct="${a.isCorrect}" data-text="${escapeAttr(a.text)}">
+        <span class="answer-letter">${letters[i] || ''}</span>
         <span>${escapeHtml(a.text)}</span>
       </button>`
       )
       .join('');
 
-    // Answer click handlers
-    answersContainer.querySelectorAll('.answer-btn').forEach((btn) => {
-      btn.addEventListener('click', () => handleAnswer(btn));
-    });
+    // Show submit button for multi-select, or direct click for single
+    if (isMulti) {
+      // Multi-select: toggle selection on click, submit with dedicated button
+      answersContainer.querySelectorAll('.answer-btn').forEach((btn) => {
+        btn.addEventListener('click', () => toggleMultiSelect(btn));
+      });
+      btnNext.classList.remove('hidden');
+      btnNext.textContent = 'Check Answers';
+      btnNext.onclick = () => submitMultiAnswer();
+    } else {
+      answersContainer.querySelectorAll('.answer-btn').forEach((btn) => {
+        btn.addEventListener('click', () => handleAnswer(btn));
+      });
+      btnNext.classList.add('hidden');
+      btnNext.onclick = () => nextQuestion();
+    }
 
-    // Hide explanation and next button
+    // Hide explanation
     explanation.classList.add('hidden');
-    btnNext.classList.add('hidden');
 
     window.scrollTo(0, 0);
+  }
+
+  function toggleMultiSelect(btn) {
+    if (state.answered) return;
+    btn.classList.toggle('selected');
+    const text = btn.dataset.text;
+    if (state.multiSelected.has(text)) {
+      state.multiSelected.delete(text);
+    } else {
+      state.multiSelected.add(text);
+    }
+  }
+
+  function submitMultiAnswer() {
+    if (state.answered) {
+      nextQuestion();
+      return;
+    }
+    state.answered = true;
+
+    const q = state.queue[state.currentIndex];
+    const correctSet = new Set(q.correctAnswers.map((a) => a.toLowerCase().trim()));
+    const selectedSet = new Set([...state.multiSelected].map((a) => a.toLowerCase().trim()));
+
+    // Check if selection matches exactly
+    const allCorrectSelected = q.correctAnswers.every((a) => selectedSet.has(a.toLowerCase().trim()));
+    const noWrongSelected = [...state.multiSelected].every((a) => correctSet.has(a.toLowerCase().trim()));
+    const isCorrect = allCorrectSelected && noWrongSelected;
+
+    // Mark all buttons
+    answersContainer.querySelectorAll('.answer-btn').forEach((b) => {
+      b.classList.add('answered');
+      if (b.dataset.correct === 'true') b.classList.add('correct');
+      // Mark selected wrong ones as incorrect
+      if (b.classList.contains('selected') && b.dataset.correct !== 'true') {
+        b.classList.add('incorrect');
+      }
+      b.classList.remove('selected');
+    });
+
+    // Session tracking
+    state.session.total++;
+    if (isCorrect) state.session.correct++;
+    else state.session.missed.push(q);
+
+    if (!state.session.bySection[q.section]) {
+      state.session.bySection[q.section] = { correct: 0, total: 0 };
+    }
+    state.session.bySection[q.section].total++;
+    if (isCorrect) state.session.bySection[q.section].correct++;
+
+    recordAnswer(q, isCorrect);
+
+    // Show explanation
+    const correctList = q.correctAnswers.join(', ');
+    explanation.innerHTML = (isCorrect ? '<strong>Correct!</strong> ' : '<strong>Incorrect.</strong> ') + 'The correct answers are: ' + escapeHtml(correctList);
+    explanation.classList.remove('hidden');
+
+    // Change button to Next
+    btnNext.textContent = state.currentIndex < state.queue.length - 1 ? 'Next Question' : 'See Results';
+    btnNext.onclick = () => nextQuestion();
+
+    explanation.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   function handleAnswer(btn) {
@@ -322,17 +401,14 @@
     recordAnswer(q, isCorrect);
 
     // Show explanation
-    if (q.explanation) {
-      explanation.innerHTML = (isCorrect ? '<strong>Correct!</strong> ' : '<strong>Incorrect.</strong> ') + escapeHtml(q.explanation);
-      explanation.classList.remove('hidden');
-    } else {
-      explanation.innerHTML = isCorrect ? '<strong>Correct!</strong>' : '<strong>Incorrect.</strong> The answer is: ' + escapeHtml(q.correctAnswer);
-      explanation.classList.remove('hidden');
-    }
+    const correctText = q.correctAnswers.join(', ');
+    explanation.innerHTML = (isCorrect ? '<strong>Correct!</strong> ' : '<strong>Incorrect.</strong> ') + 'The correct answer is: ' + escapeHtml(correctText);
+    explanation.classList.remove('hidden');
 
     // Show next
     btnNext.classList.remove('hidden');
     btnNext.textContent = state.currentIndex < state.queue.length - 1 ? 'Next Question' : 'See Results';
+    btnNext.onclick = () => nextQuestion();
 
     // Scroll to see explanation
     explanation.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -410,7 +486,7 @@
 
     // Back: question (smaller) + answer
     flashBackQuestion.textContent = q.question;
-    flashAnswer.textContent = q.correctAnswer;
+    flashAnswer.textContent = q.correctAnswers.join(', ');
 
     // Nav state
     flashBtnPrev.disabled = state.currentIndex === 0;
@@ -519,7 +595,7 @@
     }
   });
 
-  btnNext.addEventListener('click', nextQuestion);
+  btnNext.addEventListener('click', () => { if (btnNext.onclick) btnNext.onclick(); });
 
   btnStudyMissedResults.addEventListener('click', () => startQuiz(state.session.missed));
   btnStudyAgain.addEventListener('click', () => startQuiz());
@@ -578,7 +654,7 @@
       }
     } else if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowRight') {
       e.preventDefault();
-      btnNext.click();
+      if (btnNext.onclick) btnNext.onclick();
     }
   });
 

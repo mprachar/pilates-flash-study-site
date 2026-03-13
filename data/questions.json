@@ -62,7 +62,10 @@
       "id": 1,
       "section": "general-anatomy",
       "question": "Which of the following describes the connection of a synarthrotic joint?",
-      "correctAnswer": "Fibrous",
+      "type": "single",
+      "correctAnswers": [
+        "Fibrous"
+      ],
       "wrongAnswers": [
         "Cartilaginous",
         "Synovial",
@@ -75,7 +78,10 @@
       "id": 2,
       "section": "general-anatomy",
       "question": "The knees are _____ to the shoulders.",
-      "correctAnswer": "Distal",
+      "type": "single",
+      "correctAnswers": [
+        "Distal"
+      ],
       "wrongAnswers": [
         "Proximal",
         "Inferior",
@@ -88,7 +94,10 @@
       "id": 3,
       "section": "general-anatomy",
       "question": "Adduction is:",
-      "correctAnswer": "Sideways movement toward the midline of the body",
+      "type": "single",
+      "correctAnswers": [
+        "Sideways movement toward the midline of the body"
+      ],
       "wrongAnswers": [
         "Sideways movement away from the midline of the body",
         "Circular movement of a limb",
@@ -101,11 +110,15 @@
       "id": 4,
       "section": "general-anatomy",
       "question": "Which of the following actions occurs in the midsagittal plane? (Select all that apply)",
-      "correctAnswer": "Forward and backward movement, Extension, Flexion",
-      "wrongAnswers": [
+      "type": "multi",
+      "correctAnswers": [
         "Forward and backward movement",
-        "Circular movement combining flexion, extension, abduction, and adduction",
-        "Movement toward or away from the midline"
+        "Extension",
+        "Flexion"
+      ],
+      "wrongAnswers": [
+        "Front",
+        "Turning the palm face up"
       ],
       "explanation": "The correct answer is: Forward and backward movement, Extension, Flexion",
       "image": null
@@ -114,10 +127,13 @@
       "id": 5,
       "section": "general-anatomy",
       "question": "Lateral refers to a structure that is:",
-      "correctAnswer": "Away from the midline of the body",
+      "type": "single",
+      "correctAnswers": [
+        "Away from the midline of the body"
+      ],
       "wrongAnswers": [
-        "Sideways movement toward the midline of the body",
-        "Turning a bone around its own axis",
+        "Bending movement that decreases the angle between parts",
+        "Circular movement combining flexion, extension, abduction, and adduction",
         "Turning the palm face down"
       ],
       "explanation": "The correct answer is: Away from the midline of the body",
@@ -127,7 +143,10 @@
       "id": 6,
       "section": "general-anatomy",
       "question": "The ankles are more proximal to the hips than the knees.",
-      "correctAnswer": "False",
+      "type": "tf",
+      "correctAnswers": [
+        "False"
+      ],
       "wrongAnswers": [
         "True"
       ],
@@ -138,7 +157,10 @@
       "id": 7,
       "section": "general-anatomy",
       "question": "If I straighten my arm, this is called extension of the arm.",
-      "correctAnswer": "True",
+      "type": "tf",
+      "correctAnswers": [
+        "True"
+      ],
       "wrongAnswers": [
         "False"
       ],
@@ -149,7 +171,10 @@
       "id": 8,
       "section": "general-anatomy",
       "question": "From anatomical position, if you raise your arms and stretch them out away from the sides of the body, then you are _______ your arms.",
-      "correctAnswer": "Abducting",
+      "type": "single",
+      "correctAnswers": [
+        "Abducting"
+      ],
       "wrongAnswers": [
         "Adducting",
         "Extending",
@@ -162,7 +187,10 @@
       "id": 9,
       "section": "general-anatomy",
       "question": "If a structure is towards the midline of the body, it is in the _____ direction.",
-      "correctAnswer": "Medial",
+      "type": "single",
+      "correctAnswers": [
+        "Medial"
+      ],
       "wrongAnswers": [
         "Lateral",
         "Anterior",
@@ -175,7 +203,10 @@
       "id": 10,
       "section": "general-anatomy",
       "question": "In regards to the three different classes of joints: ___________________ are freely movable, ______________are immovable, and ___________________ are slightly movable.",
-      "correctAnswer": "Diarthrotic, synarthrotic, amphiarthrotic",
+      "type": "single",
+      "correctAnswers": [
+        "Diarthrotic, synarthrotic, amphiarthrotic"
+      ],
       "wrongAnswers": [
         "Synarthrotic, diarthrotic, amphiarthrotic",
         "Diarthrotic, amphiarthrotic, synarthrotic",
@@ -188,7 +219,10 @@
       "id": 11,
       "section": "general-anatomy",
       "question": "If I bend my knee, the anatomical name for this movement is extension of the knee.",
-      "correctAnswer": "False",
+      "type": "tf",
+      "correctAnswers": [
+        "False"
+      ],
       "wrongAnswers": [
         "True"
       ],
@@ -199,7 +233,10 @@
       "id": 12,
       "section": "general-anatomy",
       "question": "The thumb joint is which type of joint?",
-      "correctAnswer": "Diarthrotic",
+      "type": "single",
+      "correctAnswers": [
+        "Diarthrotic"
+      ],
       "wrongAnswers": [
         "Amphiarthrotic",
         "Synarthrotic",
@@ -212,11 +249,14 @@
       "id": 13,
       "section": "general-anatomy",
       "question": "If I bend over to touch my toes, I am _____ at the hip joints.",
-      "correctAnswer": "Flexing",
+      "type": "single",
+      "correctAnswers": [
+        "Flexing"
+      ],
       "wrongAnswers": [
-        "Away from the midline of the body",
-        "The wrist joint",
-        "Midsagittal plane"
+        "Midsagittal plane",
+        "Medial",
+        "bending your knee"
       ],
       "explanation": "The correct answer is: Flexing",
       "image": null
@@ -225,7 +265,10 @@
       "id": 14,
       "section": "general-anatomy",
       "question": "The plane that divides the body into right and left sides is the:",
-      "correctAnswer": "Midsagittal plane",
+      "type": "single",
+      "correctAnswers": [
+        "Midsagittal plane"
+      ],
       "wrongAnswers": [
         "Frontal (coronal) plane",
         "Transverse (horizontal) plane",
@@ -238,11 +281,14 @@
       "id": 15,
       "section": "general-anatomy",
       "question": "The joint at the base of the thumb is an example of what joint type?",
-      "correctAnswer": "Saddle",
+      "type": "single",
+      "correctAnswers": [
+        "Saddle"
+      ],
       "wrongAnswers": [
-        "Pivot",
         "Condyloid",
-        "Ball-and-socket"
+        "Hinge",
+        "Pivot"
       ],
       "explanation": "The correct answer is: Saddle",
       "image": null
@@ -251,11 +297,14 @@
       "id": 16,
       "section": "general-anatomy",
       "question": "The ankles are _____ to the knees.",
-      "correctAnswer": "Inferior",
+      "type": "single",
+      "correctAnswers": [
+        "Inferior"
+      ],
       "wrongAnswers": [
         "Proximal",
-        "Posterior",
-        "Superficial"
+        "Superior",
+        "Deep"
       ],
       "explanation": "The correct answer is: Inferior",
       "image": null
@@ -264,11 +313,14 @@
       "id": 17,
       "section": "general-anatomy",
       "question": "Which of the following actions occurs in the coronal plane? (Select all that apply)",
-      "correctAnswer": "Sideways movement, Abduction",
+      "type": "multi",
+      "correctAnswers": [
+        "Sideways movement",
+        "Abduction"
+      ],
       "wrongAnswers": [
-        "Abduction",
-        "Retraction",
-        "Elevation"
+        "Rotation",
+        "Turning the palm face down"
       ],
       "explanation": "The correct answer is: Sideways movement, Abduction",
       "image": null
@@ -277,10 +329,13 @@
       "id": 18,
       "section": "general-anatomy",
       "question": "A pivot joint is an example of a joint that is:",
-      "correctAnswer": "Uni-axial",
+      "type": "single",
+      "correctAnswers": [
+        "Uni-axial"
+      ],
       "wrongAnswers": [
         "Rotation",
-        "Sideways movement",
+        "Midsagittal plane",
         "The spine"
       ],
       "explanation": "The correct answer is: Uni-axial",
@@ -290,7 +345,10 @@
       "id": 19,
       "section": "general-anatomy",
       "question": "Biaxial joints allow for movement in only one direction.",
-      "correctAnswer": "False",
+      "type": "tf",
+      "correctAnswers": [
+        "False"
+      ],
       "wrongAnswers": [
         "True"
       ],
@@ -301,11 +359,14 @@
       "id": 20,
       "section": "general-anatomy",
       "question": "The movement of rotation happens in the:",
-      "correctAnswer": "Transverse plane",
+      "type": "single",
+      "correctAnswers": [
+        "Transverse plane"
+      ],
       "wrongAnswers": [
-        "Flexion",
-        "Sideways movement toward the midline of the body",
-        "Sideways movement"
+        "Flexing",
+        "Diarthrotic, synarthrotic, amphiarthrotic",
+        "Reach my arm out to the side"
       ],
       "explanation": "The correct answer is: Transverse plane",
       "image": null
@@ -314,11 +375,14 @@
       "id": 21,
       "section": "general-anatomy",
       "question": "Which of the following is part of the axial skeleton?",
-      "correctAnswer": "The spine",
+      "type": "single",
+      "correctAnswers": [
+        "The spine"
+      ],
       "wrongAnswers": [
-        "bending your knee",
-        "Inferior",
-        "Sideways movement"
+        "Rotation",
+        "The transverse plane",
+        "Midsagittal plane"
       ],
       "explanation": "The correct answer is: The spine",
       "image": null
@@ -327,11 +391,14 @@
       "id": 22,
       "section": "general-anatomy",
       "question": "Which is an example of an ellipsoidal joint?",
-      "correctAnswer": "The wrist joint",
+      "type": "single",
+      "correctAnswers": [
+        "The wrist joint"
+      ],
       "wrongAnswers": [
+        "Rotation",
         "Sideways movement",
-        "The spine",
-        "Fibrous"
+        "folding to touch your toe"
       ],
       "explanation": "The correct answer is: The wrist joint",
       "image": null
@@ -340,11 +407,14 @@
       "id": 23,
       "section": "general-anatomy",
       "question": "The action of shrugging my shoulders happens in which plane of movement?",
-      "correctAnswer": "The coronal plane",
+      "type": "single",
+      "correctAnswers": [
+        "The coronal plane"
+      ],
       "wrongAnswers": [
-        "Flexion",
-        "Abducting",
-        "Transverse plane"
+        "Saddle",
+        "Flexing",
+        "Extension"
       ],
       "explanation": "The correct answer is: The coronal plane",
       "image": null
@@ -353,7 +423,10 @@
       "id": 24,
       "section": "general-anatomy",
       "question": "The pubic symphysis is an example of an amphiarthrotic joint.",
-      "correctAnswer": "True",
+      "type": "tf",
+      "correctAnswers": [
+        "True"
+      ],
       "wrongAnswers": [
         "False"
       ],
@@ -364,7 +437,10 @@
       "id": 25,
       "section": "general-anatomy",
       "question": "The pelvis is part of the appendicular skeleton.",
-      "correctAnswer": "True",
+      "type": "tf",
+      "correctAnswers": [
+        "True"
+      ],
       "wrongAnswers": [
         "False"
       ],
@@ -375,11 +451,14 @@
       "id": 26,
       "section": "general-anatomy",
       "question": "Which of the following movements happens in the coronal plane?",
-      "correctAnswer": "Sideways movement",
+      "type": "single",
+      "correctAnswers": [
+        "Sideways movement"
+      ],
       "wrongAnswers": [
-        "Forward and backward movement",
-        "Bending movement that decreases the angle between parts",
-        "Movement toward or away from the midline"
+        "Straightening movement that increases the angle between parts",
+        "Turning the palm face down",
+        "Bending movement that decreases the angle between parts"
       ],
       "explanation": "The correct answer is: Sideways movement",
       "image": null
@@ -388,11 +467,14 @@
       "id": 27,
       "section": "general-anatomy",
       "question": "If I turn my head to the side, the movement I am doing is called:",
-      "correctAnswer": "Rotation",
+      "type": "single",
+      "correctAnswers": [
+        "Rotation"
+      ],
       "wrongAnswers": [
-        "Abduction",
+        "Inversion",
         "Extension",
-        "Flexion"
+        "Adduction"
       ],
       "explanation": "The correct answer is: Rotation",
       "image": null
@@ -401,11 +483,14 @@
       "id": 28,
       "section": "general-anatomy",
       "question": "The posterior side of the body is the:",
-      "correctAnswer": "Back",
+      "type": "single",
+      "correctAnswers": [
+        "Back"
+      ],
       "wrongAnswers": [
-        "Movement toward or away from the midline",
-        "Turning the palm face down",
-        "Bending movement that decreases the angle between parts"
+        "Sideways movement toward the midline of the body",
+        "Turning the palm face up",
+        "Turning the palm face down"
       ],
       "explanation": "The correct answer is: Back",
       "image": null
@@ -414,11 +499,14 @@
       "id": 29,
       "section": "general-anatomy",
       "question": "Abduction of the arm happens when I:",
-      "correctAnswer": "Reach my arm out to the side",
+      "type": "single",
+      "correctAnswers": [
+        "Reach my arm out to the side"
+      ],
       "wrongAnswers": [
-        "True",
-        "Back",
-        "Medial"
+        "Abduction",
+        "Rotation",
+        "Front"
       ],
       "explanation": "The correct answer is: Reach my arm out to the side",
       "image": null
@@ -427,11 +515,14 @@
       "id": 30,
       "section": "general-anatomy",
       "question": "An example of a diarthrotic joint is:",
-      "correctAnswer": "All of the above",
+      "type": "single",
+      "correctAnswers": [
+        "All of the above"
+      ],
       "wrongAnswers": [
-        "Sideways movement toward the midline of the body",
-        "Transverse plane",
-        "Fibrous"
+        "Only the first answer is correct",
+        "Only the first two answers are correct",
+        "None of the answers are correct"
       ],
       "explanation": "The correct answer is: All of the above",
       "image": null
@@ -440,11 +531,14 @@
       "id": 31,
       "section": "general-anatomy",
       "question": "Anterior refers to the _____ of a structure on the body.",
-      "correctAnswer": "Front",
+      "type": "single",
+      "correctAnswers": [
+        "Front"
+      ],
       "wrongAnswers": [
-        "Sagittal plane",
+        "Midsagittal plane",
         "Frontal (coronal) plane",
-        "Midsagittal plane"
+        "Sagittal plane"
       ],
       "explanation": "The correct answer is: Front",
       "image": null
@@ -453,11 +547,14 @@
       "id": 32,
       "section": "general-anatomy",
       "question": "The action of looking over your shoulder happens in which plane of movement?",
-      "correctAnswer": "The transverse plane",
+      "type": "single",
+      "correctAnswers": [
+        "The transverse plane"
+      ],
       "wrongAnswers": [
-        "Reach my arm out to the side",
-        "Midsagittal plane",
-        "The spine"
+        "The coronal plane",
+        "Transverse plane",
+        "Flexing"
       ],
       "explanation": "The correct answer is: The transverse plane",
       "image": null
@@ -466,7 +563,10 @@
       "id": 33,
       "section": "general-anatomy",
       "question": "The arms are part of the axial skeleton",
-      "correctAnswer": "False",
+      "type": "tf",
+      "correctAnswers": [
+        "False"
+      ],
       "wrongAnswers": [
         "True"
       ],
@@ -477,10 +577,13 @@
       "id": 34,
       "section": "general-anatomy",
       "question": "Which of the following is an example of an amphiarthrotic joint?",
-      "correctAnswer": "Intervertebral joints",
+      "type": "single",
+      "correctAnswers": [
+        "Intervertebral joints"
+      ],
       "wrongAnswers": [
-        "True",
-        "bending your knee",
+        "Distal",
+        "Diarthrotic, synarthrotic, amphiarthrotic",
         "Reach my arm out to the side"
       ],
       "explanation": "The correct answer is: Intervertebral joints",
@@ -490,11 +593,14 @@
       "id": 35,
       "section": "general-anatomy",
       "question": "An example of synarthrotic joints are:",
-      "correctAnswer": "The sutures in the skull",
+      "type": "single",
+      "correctAnswers": [
+        "The sutures in the skull"
+      ],
       "wrongAnswers": [
-        "Movement that increases the angle of a joint",
-        "The spine",
-        "Fibrous"
+        "Diarthrotic, synarthrotic, amphiarthrotic",
+        "Flexion",
+        "Pressing the gas pedal to the floor"
       ],
       "explanation": "The correct answer is: The sutures in the skull",
       "image": null
@@ -503,24 +609,31 @@
       "id": 36,
       "section": "general-anatomy",
       "question": "Which action occurs in the sagittal plane?",
-      "correctAnswer": "Pressing the gas pedal to the floor",
-      "wrongAnswers": [
-        "Forward and backward movement",
-        "The coronal plane",
-        "False"
+      "type": "multi",
+      "correctAnswers": [
+        "Pressing the gas pedal to the floor",
+        "bending your knee",
+        "folding to touch your toe"
       ],
-      "explanation": "The correct answer is: Pressing the gas pedal to the floor",
+      "wrongAnswers": [
+        "Away from the midline of the body",
+        "The sutures in the skull"
+      ],
+      "explanation": "The correct answer is: Pressing the gas pedal to the floor, bending your knee, folding to touch your toe",
       "image": null
     },
     {
       "id": 37,
       "section": "general-anatomy",
       "question": "The shoulders are _____ to the hips.",
-      "correctAnswer": "Superior",
+      "type": "single",
+      "correctAnswers": [
+        "Superior"
+      ],
       "wrongAnswers": [
-        "Medial",
-        "Posterior",
-        "Lateral"
+        "Deep",
+        "Anterior",
+        "Inferior"
       ],
       "explanation": "The correct answer is: Superior",
       "image": null
@@ -529,11 +642,14 @@
       "id": 38,
       "section": "general-anatomy",
       "question": "Extension is:",
-      "correctAnswer": "Movement that increases the angle of a joint",
+      "type": "single",
+      "correctAnswers": [
+        "Movement that increases the angle of a joint"
+      ],
       "wrongAnswers": [
-        "Depression",
-        "Elevation",
-        "Circumduction"
+        "Hyperextension",
+        "Supination",
+        "Inversion"
       ],
       "explanation": "The correct answer is: Movement that increases the angle of a joint",
       "image": null
@@ -542,7 +658,10 @@
       "id": 39,
       "section": "muscle-contractions",
       "question": "Isometric muscular contractions happen when a muscle:",
-      "correctAnswer": "Contracts without getting shorter or longer",
+      "type": "single",
+      "correctAnswers": [
+        "Contracts without getting shorter or longer"
+      ],
       "wrongAnswers": [
         "Muscle shortens as it overcomes resistance",
         "Muscle lengthens while maintaining tension",
@@ -555,7 +674,10 @@
       "id": 40,
       "section": "muscle-contractions",
       "question": "Using the same amount of power, a muscle shortens as it overcomes resistance. What type of contraction is this?",
-      "correctAnswer": "Isotonic concentric",
+      "type": "single",
+      "correctAnswers": [
+        "Isotonic concentric"
+      ],
       "wrongAnswers": [
         "Isotonic eccentric",
         "Isometric",
@@ -568,7 +690,10 @@
       "id": 41,
       "section": "muscle-contractions",
       "question": "A fascicle is a tube of connective tissue surrounding a group of muscle cells.",
-      "correctAnswer": "True",
+      "type": "tf",
+      "correctAnswers": [
+        "True"
+      ],
       "wrongAnswers": [
         "False"
       ],
@@ -579,11 +704,14 @@
       "id": 42,
       "section": "muscle-contractions",
       "question": "Isotonic eccentric muscular contraction happens when the muscle gets ______during contraction.",
-      "correctAnswer": "Longer",
+      "type": "single",
+      "correctAnswers": [
+        "Longer"
+      ],
       "wrongAnswers": [
-        "Contracts without getting shorter or longer",
+        "Muscle generates force without movement",
         "Muscle contracts at a constant speed",
-        "Muscle generates force without movement"
+        "Muscle lengthens as it resists a load"
       ],
       "explanation": "The correct answer is: Longer",
       "image": null
@@ -592,11 +720,14 @@
       "id": 43,
       "section": "muscle-contractions",
       "question": "If we stretch our arms out to our sides, our deltoids are doing a/an __________ contraction to lift the arms.",
-      "correctAnswer": "Concentric",
+      "type": "single",
+      "correctAnswers": [
+        "Concentric"
+      ],
       "wrongAnswers": [
         "Isokinetic",
         "Isometric",
-        "Isotonic eccentric"
+        "Isotonic concentric"
       ],
       "explanation": "The correct answer is: Concentric",
       "image": null
@@ -605,11 +736,14 @@
       "id": 44,
       "section": "muscle-contractions",
       "question": "The thin type of protein anchored to the z-line is called:",
-      "correctAnswer": "Actin",
+      "type": "single",
+      "correctAnswers": [
+        "Actin"
+      ],
       "wrongAnswers": [
-        "Connective tissue",
         "stabilize something",
-        "prevent something from moving"
+        "False",
+        "Mineral storage"
       ],
       "explanation": "The correct answer is: Actin",
       "image": null
@@ -618,10 +752,13 @@
       "id": 45,
       "section": "muscle-contractions",
       "question": "When muscles contract, they move bones. The more stable bone of attachment is called the ________________, while the more movable bone is called the ________________ of that muscle.",
-      "correctAnswer": "Origin; insertion",
+      "type": "single",
+      "correctAnswers": [
+        "Origin; insertion"
+      ],
       "wrongAnswers": [
-        "Insertion",
-        "Stabilizer",
+        "Fascicle",
+        "Antagonist",
         "Aponeurosis"
       ],
       "explanation": "The correct answer is: Origin; insertion",
@@ -631,7 +768,10 @@
       "id": 46,
       "section": "muscle-contractions",
       "question": "An example of an isotonic muscular contraction is holding a weight steadily in your hand without moving.",
-      "correctAnswer": "False",
+      "type": "tf",
+      "correctAnswers": [
+        "False"
+      ],
       "wrongAnswers": [
         "True"
       ],
@@ -642,11 +782,14 @@
       "id": 47,
       "section": "muscle-contractions",
       "question": "A muscle whose contraction actually produces the movement is known as the:",
-      "correctAnswer": "Agonist",
+      "type": "single",
+      "correctAnswers": [
+        "Agonist"
+      ],
       "wrongAnswers": [
-        "Insertion",
-        "Prime mover",
-        "Origin"
+        "Aponeurosis",
+        "Tendon",
+        "Insertion"
       ],
       "explanation": "The correct answer is: Agonist",
       "image": null
@@ -655,11 +798,14 @@
       "id": 48,
       "section": "muscle-contractions",
       "question": "Which of the following is not one of the functions of the muscular system?",
-      "correctAnswer": "Mineral storage",
+      "type": "single",
+      "correctAnswers": [
+        "Mineral storage"
+      ],
       "wrongAnswers": [
-        "make something move",
-        "Longer",
-        "Sarcomere"
+        "False",
+        "Agonist",
+        "Origin; insertion"
       ],
       "explanation": "The correct answer is: Mineral storage",
       "image": null
@@ -668,7 +814,10 @@
       "id": 49,
       "section": "muscle-contractions",
       "question": "An isometric contraction does NOT produce movements.",
-      "correctAnswer": "True",
+      "type": "tf",
+      "correctAnswers": [
+        "True"
+      ],
       "wrongAnswers": [
         "False"
       ],
@@ -679,11 +828,14 @@
       "id": 50,
       "section": "muscle-contractions",
       "question": "When you tear a muscle, what you actually tear is:",
-      "correctAnswer": "Connective tissue",
+      "type": "single",
+      "correctAnswers": [
+        "Connective tissue"
+      ],
       "wrongAnswers": [
-        "Isotonic eccentric",
-        "Contracts without getting shorter or longer",
-        "Sarcomere"
+        "Sarcomere",
+        "All of the above",
+        "False"
       ],
       "explanation": "The correct answer is: Connective tissue",
       "image": null
@@ -692,11 +844,14 @@
       "id": 51,
       "section": "muscle-contractions",
       "question": "A muscle cell is a row of actin and myosin molecules surrounded by a layer of:",
-      "correctAnswer": "Connective tissue",
+      "type": "single",
+      "correctAnswers": [
+        "Connective tissue"
+      ],
       "wrongAnswers": [
-        "All of the above",
-        "Origin; insertion",
-        "Agonist"
+        "Isotonic concentric",
+        "Mineral storage",
+        "All or none of the muscle cell will contract when stimulated"
       ],
       "explanation": "The correct answer is: Connective tissue",
       "image": null
@@ -705,7 +860,10 @@
       "id": 52,
       "section": "muscle-contractions",
       "question": "A spastic muscle has less than normal tone.",
-      "correctAnswer": "False",
+      "type": "tf",
+      "correctAnswers": [
+        "False"
+      ],
       "wrongAnswers": [
         "True"
       ],
@@ -716,11 +874,14 @@
       "id": 53,
       "section": "muscle-contractions",
       "question": "When a skeletal muscle can no longer contract despite neural stimulation, it is referred to as:",
-      "correctAnswer": "Muscle fatigue",
+      "type": "single",
+      "correctAnswers": [
+        "Muscle fatigue"
+      ],
       "wrongAnswers": [
         "All or none of the muscle cell will contract when stimulated",
-        "Contracts without getting shorter or longer",
-        "Sarcomere"
+        "Synergist",
+        "Connective tissue"
       ],
       "explanation": "The correct answer is: Muscle fatigue",
       "image": null
@@ -729,7 +890,10 @@
       "id": 54,
       "section": "muscle-contractions",
       "question": "If I lower my body towards the floor from a push-up position, my triceps are contracting while also getting longer. What type of contraction is occurring in my triceps?",
-      "correctAnswer": "Isotonic eccentric",
+      "type": "single",
+      "correctAnswers": [
+        "Isotonic eccentric"
+      ],
       "wrongAnswers": [
         "Isotonic concentric",
         "Isometric",
@@ -742,10 +906,13 @@
       "id": 55,
       "section": "muscle-contractions",
       "question": "A muscle that works in conjunction with another muscle to create a particular action is called a:",
-      "correctAnswer": "Synergist",
+      "type": "single",
+      "correctAnswers": [
+        "Synergist"
+      ],
       "wrongAnswers": [
-        "Tendon",
-        "Prime mover",
+        "Muscle belly",
+        "Fascicle",
         "Agonist"
       ],
       "explanation": "The correct answer is: Synergist",
@@ -755,11 +922,14 @@
       "id": 56,
       "section": "muscle-contractions",
       "question": "The functional unit of a muscle cell is:",
-      "correctAnswer": "Sarcomere",
+      "type": "single",
+      "correctAnswers": [
+        "Sarcomere"
+      ],
       "wrongAnswers": [
-        "Myofibril",
-        "Agonist",
-        "Synergist"
+        "Synergist",
+        "Prime mover",
+        "Origin"
       ],
       "explanation": "The correct answer is: Sarcomere",
       "image": null
@@ -768,7 +938,10 @@
       "id": 57,
       "section": "muscle-contractions",
       "question": "Generally, a muscle could be described as a type of connective tissue with specialized cells containing two proteins.",
-      "correctAnswer": "True",
+      "type": "tf",
+      "correctAnswers": [
+        "True"
+      ],
       "wrongAnswers": [
         "False"
       ],
@@ -779,24 +952,32 @@
       "id": 58,
       "section": "muscle-contractions",
       "question": "Muscles function to:",
-      "correctAnswer": "All of the above",
-      "wrongAnswers": [
-        "Sarcomere",
-        "Concentric",
-        "Synergist"
+      "type": "multi",
+      "correctAnswers": [
+        "All of the above",
+        "stabilize something",
+        "prevent something from moving",
+        "make something move"
       ],
-      "explanation": "The correct answer is: All of the above",
+      "wrongAnswers": [
+        "Synergist",
+        "Muscle fatigue"
+      ],
+      "explanation": "The correct answer is: All of the above, stabilize something, prevent something from moving, make something move",
       "image": null
     },
     {
       "id": 59,
       "section": "muscle-contractions",
       "question": "The all-or-none principle simply states:",
-      "correctAnswer": "All or none of the muscle cell will contract when stimulated",
+      "type": "single",
+      "correctAnswers": [
+        "All or none of the muscle cell will contract when stimulated"
+      ],
       "wrongAnswers": [
         "Muscle fatigue",
-        "Origin; insertion",
-        "prevent something from moving"
+        "False",
+        "True"
       ],
       "explanation": "The correct answer is: All or none of the muscle cell will contract when stimulated",
       "image": null
@@ -805,7 +986,10 @@
       "id": 60,
       "section": "forearm",
       "question": "The image shown is which muscle?",
-      "correctAnswer": "Brachialis",
+      "type": "single",
+      "correctAnswers": [
+        "Brachialis"
+      ],
       "wrongAnswers": [
         "Biceps brachii",
         "Brachioradialis",
@@ -818,7 +1002,10 @@
       "id": 61,
       "section": "forearm",
       "question": "In this image we see one of the bony landmarks where brachialis inserts. It is the:",
-      "correctAnswer": "The ulnar tuberosity",
+      "type": "single",
+      "correctAnswers": [
+        "The ulnar tuberosity"
+      ],
       "wrongAnswers": [
         "Radial tuberosity",
         "Coronoid process of ulna",
@@ -831,7 +1018,10 @@
       "id": 62,
       "section": "forearm",
       "question": "This image shows the insertion of which muscle?",
-      "correctAnswer": "Biceps brachii",
+      "type": "single",
+      "correctAnswers": [
+        "Biceps brachii"
+      ],
       "wrongAnswers": [
         "Brachialis",
         "Brachioradialis",
@@ -844,24 +1034,30 @@
       "id": 63,
       "section": "forearm",
       "question": "Biceps brachii does which action(s)? Select all that apply.",
-      "correctAnswer": "Supination of the forearm",
-      "wrongAnswers": [
-        "Extension of the elbow",
-        "Flexion of the shoulder",
+      "type": "multi",
+      "correctAnswers": [
+        "Supination of the forearm",
         "Flexion of the elbow"
       ],
-      "explanation": "The correct answer is: Supination of the forearm",
+      "wrongAnswers": [
+        "olecranon process of the ulna",
+        "Pronation of the forearm"
+      ],
+      "explanation": "The correct answer is: Supination of the forearm, Flexion of the elbow",
       "image": null
     },
     {
       "id": 64,
       "section": "forearm",
       "question": "The image shown is which bony landmark?",
-      "correctAnswer": "Supraglenoid tubercle",
+      "type": "single",
+      "correctAnswers": [
+        "Supraglenoid tubercle"
+      ],
       "wrongAnswers": [
         "Brachialis",
-        "Coracoid process",
-        "Supination of the forearm"
+        "Flexion of the elbow",
+        "Triceps brachii (long head)"
       ],
       "explanation": "The correct answer is: Supraglenoid tubercle",
       "image": "image4.jpeg"
@@ -870,11 +1066,14 @@
       "id": 65,
       "section": "forearm",
       "question": "The image shows the origin of which muscle?",
-      "correctAnswer": "Biceps Brachii (long head)",
+      "type": "single",
+      "correctAnswers": [
+        "Biceps Brachii (long head)"
+      ],
       "wrongAnswers": [
-        "Anconeus",
-        "Biceps brachii",
-        "Supinator"
+        "Pronator teres",
+        "Brachialis",
+        "Anconeus"
       ],
       "explanation": "The correct answer is: Biceps Brachii (long head)",
       "image": "image5.png"
@@ -883,11 +1082,14 @@
       "id": 66,
       "section": "forearm",
       "question": "The bony landmark shown is which of the following?",
-      "correctAnswer": "olecranon process of the ulna",
+      "type": "single",
+      "correctAnswers": [
+        "olecranon process of the ulna"
+      ],
       "wrongAnswers": [
+        "Coracoid process",
         "Radial tuberosity",
-        "Coronoid process of ulna",
-        "Ulnar tuberosity"
+        "Bicipital groove"
       ],
       "explanation": "The correct answer is: olecranon process of the ulna",
       "image": "image6.png"
@@ -896,7 +1098,10 @@
       "id": 67,
       "section": "forearm",
       "question": "The image shown is which muscle?",
-      "correctAnswer": "Biceps brachii",
+      "type": "single",
+      "correctAnswers": [
+        "Biceps brachii"
+      ],
       "wrongAnswers": [
         "Brachialis",
         "Brachioradialis",
@@ -909,7 +1114,10 @@
       "id": 68,
       "section": "forearm",
       "question": "This image shows the insertion of which muscle?",
-      "correctAnswer": "Triceps brachii",
+      "type": "single",
+      "correctAnswers": [
+        "Triceps brachii"
+      ],
       "wrongAnswers": [
         "Biceps brachii",
         "Brachialis",
@@ -922,11 +1130,14 @@
       "id": 69,
       "section": "forearm",
       "question": "This image shows the origin of which muscle?",
-      "correctAnswer": "Triceps brachii (long head)",
+      "type": "single",
+      "correctAnswers": [
+        "Triceps brachii (long head)"
+      ],
       "wrongAnswers": [
         "Pronator quadratus",
-        "Supinator",
-        "Brachioradialis"
+        "Brachialis",
+        "Anconeus"
       ],
       "explanation": "The correct answer is: Triceps brachii (long head)",
       "image": "image9.png"
@@ -935,11 +1146,14 @@
       "id": 70,
       "section": "forearm",
       "question": "The bony landmark shown is which of the following?",
-      "correctAnswer": "Coracoid process",
+      "type": "single",
+      "correctAnswers": [
+        "Coracoid process"
+      ],
       "wrongAnswers": [
-        "Styloid process of radius",
-        "Deltoid tuberosity",
-        "Lateral epicondyle of humerus"
+        "Coronoid process of ulna",
+        "Bicipital groove",
+        "Olecranon process"
       ],
       "explanation": "The correct answer is: Coracoid process",
       "image": null
@@ -948,7 +1162,10 @@
       "id": 71,
       "section": "scapula",
       "question": "The bony landmark shown is what muscle attachment?",
-      "correctAnswer": "Pectoralis minor origin",
+      "type": "single",
+      "correctAnswers": [
+        "Pectoralis minor origin"
+      ],
       "wrongAnswers": [
         "Serratus anterior origin",
         "Pectoralis major origin",
@@ -961,7 +1178,10 @@
       "id": 72,
       "section": "scapula",
       "question": "The image shows which bony landmark?",
-      "correctAnswer": "Medial border of the scapula",
+      "type": "single",
+      "correctAnswers": [
+        "Medial border of the scapula"
+      ],
       "wrongAnswers": [
         "Lateral border of the scapula",
         "Spine of the scapula",
@@ -974,7 +1194,10 @@
       "id": 73,
       "section": "scapula",
       "question": "The image shows the insertion for which muscle?",
-      "correctAnswer": "Levator scapulae",
+      "type": "single",
+      "correctAnswers": [
+        "Levator scapulae"
+      ],
       "wrongAnswers": [
         "Rhomboid minor",
         "Upper trapezius",
@@ -987,11 +1210,14 @@
       "id": 74,
       "section": "scapula",
       "question": "The rhomboids do which actions?",
-      "correctAnswer": "Downward rotation and retraction",
+      "type": "single",
+      "correctAnswers": [
+        "Downward rotation and retraction"
+      ],
       "wrongAnswers": [
+        "Depression of the scapula",
         "Protraction of the scapula",
-        "Downward rotation of the scapula",
-        "Depression of the scapula"
+        "Retraction of the scapula"
       ],
       "explanation": "The correct answer is: Downward rotation and retraction",
       "image": null
@@ -1000,10 +1226,13 @@
       "id": 75,
       "section": "scapula",
       "question": "The image shows the origin of which muscle?",
-      "correctAnswer": "Rhomboids (major portion)",
+      "type": "single",
+      "correctAnswers": [
+        "Rhomboids (major portion)"
+      ],
       "wrongAnswers": [
-        "Rhomboid major",
-        "Levator scapulae",
+        "Rhomboid minor",
+        "Trapezius (lower)",
         "Serratus anterior"
       ],
       "explanation": "The correct answer is: Rhomboids (major portion)",
@@ -1013,11 +1242,14 @@
       "id": 76,
       "section": "scapula",
       "question": "The image shows which bony landmark(s)?",
-      "correctAnswer": "Base of the occiput",
+      "type": "single",
+      "correctAnswers": [
+        "Base of the occiput"
+      ],
       "wrongAnswers": [
-        "Levator scapulae",
-        "Pectoralis minor origin",
-        "Pectoralis minor"
+        "Medial border of the scapula",
+        "Serratus anterior",
+        "Elevation and downward rotation"
       ],
       "explanation": "The correct answer is: Base of the occiput",
       "image": "image14.jpeg"
@@ -1026,11 +1258,14 @@
       "id": 77,
       "section": "scapula",
       "question": "The image shows which of the following?",
-      "correctAnswer": "Insertion middle trapezius",
+      "type": "single",
+      "correctAnswers": [
+        "Insertion middle trapezius"
+      ],
       "wrongAnswers": [
-        "Trapezius (middle)",
-        "Levator scapulae",
-        "Pectoralis minor"
+        "Pectoralis minor",
+        "Rhomboid minor",
+        "Rhomboid major"
       ],
       "explanation": "The correct answer is: Insertion middle trapezius",
       "image": "image15.jpeg"
@@ -1039,11 +1274,14 @@
       "id": 78,
       "section": "scapula",
       "question": "Which of the following is the insertion of the pectoralis minor?",
-      "correctAnswer": "Coracoid process",
+      "type": "single",
+      "correctAnswers": [
+        "Coracoid process"
+      ],
       "wrongAnswers": [
-        "Superior angle of the scapula",
-        "Nuchal line",
-        "Medial border of the scapula"
+        "Spine of the scapula",
+        "Inferior angle of the scapula",
+        "Transverse processes of C1-C4"
       ],
       "explanation": "The correct answer is: Coracoid process",
       "image": null
@@ -1052,11 +1290,14 @@
       "id": 79,
       "section": "scapula",
       "question": "The levator scapulae does which actions?",
-      "correctAnswer": "Elevation and downward rotation",
+      "type": "single",
+      "correctAnswers": [
+        "Elevation and downward rotation"
+      ],
       "wrongAnswers": [
-        "Upward rotation of the scapula",
-        "Elevation of the scapula",
-        "Anterior tilt of the scapula"
+        "Anterior tilt of the scapula",
+        "Downward rotation of the scapula",
+        "Protraction of the scapula"
       ],
       "explanation": "The correct answer is: Elevation and downward rotation",
       "image": null
@@ -1065,7 +1306,10 @@
       "id": 80,
       "section": "scapula",
       "question": "The image shows the origin of which muscle?",
-      "correctAnswer": "Serratus anterior",
+      "type": "single",
+      "correctAnswers": [
+        "Serratus anterior"
+      ],
       "wrongAnswers": [
         "Rhomboid major",
         "Pectoralis minor",
@@ -1078,11 +1322,14 @@
       "id": 81,
       "section": "scapula",
       "question": "The image shows which bony landmark(s)?",
-      "correctAnswer": "Spine of the scapula",
+      "type": "single",
+      "correctAnswers": [
+        "Spine of the scapula"
+      ],
       "wrongAnswers": [
-        "Ribs 1-8",
-        "Spinous processes of T1-T12",
-        "Medial border of the scapula"
+        "Acromion process",
+        "Mastoid process",
+        "Transverse processes of C1-C4"
       ],
       "explanation": "The correct answer is: Spine of the scapula",
       "image": "image17.jpeg"
@@ -1091,11 +1338,14 @@
       "id": 82,
       "section": "scapula",
       "question": "The image shown is which muscle?",
-      "correctAnswer": "Pectoralis minor",
+      "type": "single",
+      "correctAnswers": [
+        "Pectoralis minor"
+      ],
       "wrongAnswers": [
+        "Trapezius (middle)",
         "Trapezius (lower)",
-        "Rhomboid major",
-        "Levator scapulae"
+        "Serratus anterior"
       ],
       "explanation": "The correct answer is: Pectoralis minor",
       "image": "image18.jpeg"
@@ -1104,7 +1354,10 @@
       "id": 83,
       "section": "scapula",
       "question": "The image shows the insertion of which muscle?",
-      "correctAnswer": "Serratus anterior",
+      "type": "single",
+      "correctAnswers": [
+        "Serratus anterior"
+      ],
       "wrongAnswers": [
         "Rhomboid major",
         "Pectoralis minor",
@@ -1117,11 +1370,14 @@
       "id": 84,
       "section": "scapula",
       "question": "The image shows the insertion for which muscle?",
-      "correctAnswer": "Rhomboids (major portion)",
+      "type": "single",
+      "correctAnswers": [
+        "Rhomboids (major portion)"
+      ],
       "wrongAnswers": [
-        "Pectoralis minor",
-        "Trapezius (lower)",
-        "Rhomboid minor"
+        "Subclavius",
+        "Trapezius (middle)",
+        "Serratus anterior"
       ],
       "explanation": "The correct answer is: Rhomboids (major portion)",
       "image": "image20.jpeg"
@@ -1130,7 +1386,10 @@
       "id": 85,
       "section": "scapula",
       "question": "The image shown is which muscle?",
-      "correctAnswer": "Serratus anterior",
+      "type": "single",
+      "correctAnswers": [
+        "Serratus anterior"
+      ],
       "wrongAnswers": [
         "Rhomboid major",
         "Pectoralis minor",
@@ -1143,7 +1402,10 @@
       "id": 86,
       "section": "scapula",
       "question": "The image shows the origin for which muscle?",
-      "correctAnswer": "Levator scapulae",
+      "type": "single",
+      "correctAnswers": [
+        "Levator scapulae"
+      ],
       "wrongAnswers": [
         "Rhomboid minor",
         "Upper trapezius",
@@ -1156,7 +1418,10 @@
       "id": 87,
       "section": "shoulder",
       "question": "Which muscle does NOT adduct the humerus?",
-      "correctAnswer": "Deltoids",
+      "type": "single",
+      "correctAnswers": [
+        "Deltoids"
+      ],
       "wrongAnswers": [
         "Latissimus dorsi",
         "Pectoralis major",
@@ -1169,7 +1434,10 @@
       "id": 88,
       "section": "shoulder",
       "question": "The lateral third of the clavicle is which of the following?",
-      "correctAnswer": "Origin of anterior deltoids",
+      "type": "single",
+      "correctAnswers": [
+        "Origin of anterior deltoids"
+      ],
       "wrongAnswers": [
         "Origin of middle deltoids",
         "Insertion of anterior deltoids",
@@ -1182,7 +1450,10 @@
       "id": 89,
       "section": "shoulder",
       "question": "Which of the following is not an action of latissimus dorsi?",
-      "correctAnswer": "Abduction of the humerus",
+      "type": "single",
+      "correctAnswers": [
+        "Abduction of the humerus"
+      ],
       "wrongAnswers": [
         "Adduction of the humerus",
         "Flexion of the humerus",
@@ -1195,11 +1466,14 @@
       "id": 90,
       "section": "shoulder",
       "question": "The image shows which muscle?",
-      "correctAnswer": "Teres major",
+      "type": "single",
+      "correctAnswers": [
+        "Teres major"
+      ],
       "wrongAnswers": [
-        "Posterior deltoid",
         "Supraspinatus",
-        "Middle deltoid"
+        "Teres minor",
+        "Coracobrachialis"
       ],
       "explanation": "The correct answer is: Teres major",
       "image": "image23.jpeg"
@@ -1208,11 +1482,14 @@
       "id": 91,
       "section": "shoulder",
       "question": "The image shows which of the following bony landmarks?",
-      "correctAnswer": "Sternum",
+      "type": "single",
+      "correctAnswers": [
+        "Sternum"
+      ],
       "wrongAnswers": [
-        "Subscapularis",
-        "Infraspinous fossa",
-        "Pectoralis major"
+        "Teres major",
+        "Supraspinatus",
+        "Greater tubercle of the humerus"
       ],
       "explanation": "The correct answer is: Sternum",
       "image": "image24.jpeg"
@@ -1221,11 +1498,14 @@
       "id": 92,
       "section": "shoulder",
       "question": "Which of the following muscles do medial rotation?",
-      "correctAnswer": "Subscapularis, pectoralis major, teres major",
+      "type": "single",
+      "correctAnswers": [
+        "Subscapularis, pectoralis major, teres major"
+      ],
       "wrongAnswers": [
-        "Pectoralis major",
-        "Subscapularis",
-        "Supraspinatus"
+        "Middle deltoid",
+        "Anterior deltoid",
+        "Teres minor"
       ],
       "explanation": "The correct answer is: Subscapularis, pectoralis major, teres major",
       "image": null
@@ -1234,7 +1514,10 @@
       "id": 93,
       "section": "shoulder",
       "question": "Which of the rotator cuff muscles inserts onto the lesser tubercle?",
-      "correctAnswer": "Subscapularis",
+      "type": "single",
+      "correctAnswers": [
+        "Subscapularis"
+      ],
       "wrongAnswers": [
         "Infraspinatus",
         "Supraspinatus",
@@ -1247,11 +1530,14 @@
       "id": 94,
       "section": "shoulder",
       "question": "The deltoid tuberosity is which of the following?",
-      "correctAnswer": "Insertion of the deltoids",
+      "type": "single",
+      "correctAnswers": [
+        "Insertion of the deltoids"
+      ],
       "wrongAnswers": [
-        "Greater tubercle of humerus",
-        "Spine of the scapula",
-        "Lateral third of the clavicle"
+        "Thoracolumbar fascia",
+        "Lesser tubercle of humerus",
+        "Intertubercular groove"
       ],
       "explanation": "The correct answer is: Insertion of the deltoids",
       "image": null
@@ -1260,11 +1546,14 @@
       "id": 95,
       "section": "shoulder",
       "question": "Which of the following muscles can do both medial and lateral rotation of the humerus?",
-      "correctAnswer": "Deltoid",
+      "type": "single",
+      "correctAnswers": [
+        "Deltoid"
+      ],
       "wrongAnswers": [
-        "Infraspinatus",
+        "Posterior deltoid",
         "Latissimus dorsi",
-        "Supraspinatus"
+        "Anterior deltoid"
       ],
       "explanation": "The correct answer is: Deltoid",
       "image": null
@@ -1273,24 +1562,31 @@
       "id": 96,
       "section": "shoulder",
       "question": "Which of the following is the origin of latissimus dorsi?",
-      "correctAnswer": "Thoracolumbar aponeurosis",
-      "wrongAnswers": [
-        "Inferior angle of scapula",
-        "Sternum",
-        "Deltoid"
+      "type": "multi",
+      "correctAnswers": [
+        "Thoracolumbar aponeurosis",
+        "Vertebrae T7-L5",
+        "Crest of the ilium"
       ],
-      "explanation": "The correct answer is: Thoracolumbar aponeurosis",
+      "wrongAnswers": [
+        "Latissimus dorsi",
+        "Subscapularis"
+      ],
+      "explanation": "The correct answer is: Thoracolumbar aponeurosis, Vertebrae T7-L5, Crest of the ilium",
       "image": null
     },
     {
       "id": 97,
       "section": "shoulder",
       "question": "Which muscle laterally rotates the humerus?",
-      "correctAnswer": "Teres minor",
+      "type": "single",
+      "correctAnswers": [
+        "Teres minor"
+      ],
       "wrongAnswers": [
-        "Subscapularis",
-        "Anterior deltoid",
-        "Posterior deltoid"
+        "Middle deltoid",
+        "Pectoralis major",
+        "Subscapularis"
       ],
       "explanation": "The correct answer is: Teres minor",
       "image": null
@@ -1299,11 +1595,14 @@
       "id": 98,
       "section": "shoulder",
       "question": "The image shows which of the following bony landmarks?",
-      "correctAnswer": "Infraspinous fossa",
+      "type": "single",
+      "correctAnswers": [
+        "Infraspinous fossa"
+      ],
       "wrongAnswers": [
-        "Acromion process",
-        "Supraspinous fossa",
-        "Lateral third of the clavicle"
+        "Lateral third of the clavicle",
+        "Spine of the scapula",
+        "Intertubercular groove"
       ],
       "explanation": "The correct answer is: Infraspinous fossa",
       "image": "image25.jpeg"
@@ -1312,11 +1611,14 @@
       "id": 99,
       "section": "shoulder",
       "question": "Which muscle does the same actions as latissimus dorsi except for one?",
-      "correctAnswer": "Teres major",
+      "type": "single",
+      "correctAnswers": [
+        "Teres major"
+      ],
       "wrongAnswers": [
-        "Anterior deltoid",
-        "Latissimus dorsi",
-        "Supraspinatus"
+        "Pectoralis major",
+        "Middle deltoid",
+        "Posterior deltoid"
       ],
       "explanation": "The correct answer is: Teres major",
       "image": null
@@ -1325,7 +1627,10 @@
       "id": 100,
       "section": "shoulder",
       "question": "The image shows which of the following muscles?",
-      "correctAnswer": "Supraspinatus",
+      "type": "single",
+      "correctAnswers": [
+        "Supraspinatus"
+      ],
       "wrongAnswers": [
         "Infraspinatus",
         "Subscapularis",
@@ -1338,11 +1643,14 @@
       "id": 101,
       "section": "shoulder",
       "question": "The image shows which of the following bony landmarks?",
-      "correctAnswer": "Greater tubercle of the humerus",
+      "type": "single",
+      "correctAnswers": [
+        "Greater tubercle of the humerus"
+      ],
       "wrongAnswers": [
-        "Inferior angle of scapula",
-        "Crest of the ilium",
-        "Insertion of the deltoids"
+        "Latissimus dorsi",
+        "Abduction of the humerus",
+        "Supraspinatus"
       ],
       "explanation": "The correct answer is: Greater tubercle of the humerus",
       "image": "image27.jpeg"
@@ -1351,24 +1659,31 @@
       "id": 102,
       "section": "shoulder",
       "question": "Which of these muscles inserts on or along the bicipital groove?",
-      "correctAnswer": "Pectoralis major",
-      "wrongAnswers": [
-        "Middle deltoid",
-        "Supraspinatus",
-        "Teres major"
+      "type": "multi",
+      "correctAnswers": [
+        "Pectoralis major",
+        "Teres major",
+        "Latissimus dorsi"
       ],
-      "explanation": "The correct answer is: Pectoralis major",
+      "wrongAnswers": [
+        "Deltoid",
+        "Middle deltoid"
+      ],
+      "explanation": "The correct answer is: Pectoralis major, Teres major, Latissimus dorsi",
       "image": null
     },
     {
       "id": 103,
       "section": "shoulder",
       "question": "The image shows which of the following bony landmarks?",
-      "correctAnswer": "Inferior angle of scapula",
+      "type": "single",
+      "correctAnswers": [
+        "Inferior angle of scapula"
+      ],
       "wrongAnswers": [
         "Crest of lesser tubercle",
-        "Bicipital groove",
-        "Infraspinous fossa"
+        "Lateral third of the clavicle",
+        "Bicipital groove"
       ],
       "explanation": "The correct answer is: Inferior angle of scapula",
       "image": "image28.jpeg"
@@ -1377,11 +1692,14 @@
       "id": 104,
       "section": "shoulder",
       "question": "Which of the following muscles does NOT originate from a point on the scapula?",
-      "correctAnswer": "Pectoralis major",
+      "type": "single",
+      "correctAnswers": [
+        "Pectoralis major"
+      ],
       "wrongAnswers": [
-        "Coracobrachialis",
-        "Posterior deltoid",
-        "Teres minor"
+        "Subscapularis",
+        "Teres major",
+        "Infraspinatus"
       ],
       "explanation": "The correct answer is: Pectoralis major",
       "image": null
@@ -1390,7 +1708,10 @@
       "id": 105,
       "section": "shoulder",
       "question": "Which of the following muscles is antagonistic to itself?",
-      "correctAnswer": "Deltoids",
+      "type": "single",
+      "correctAnswers": [
+        "Deltoids"
+      ],
       "wrongAnswers": [
         "Latissimus dorsi",
         "Pectoralis major",
@@ -1403,7 +1724,10 @@
       "id": 106,
       "section": "shoulder",
       "question": "Which muscle might be especially well-developed in someone who is a swimmer?",
-      "correctAnswer": "Latissimus dorsi",
+      "type": "single",
+      "correctAnswers": [
+        "Latissimus dorsi"
+      ],
       "wrongAnswers": [
         "Teres major",
         "Posterior deltoid",
@@ -1416,7 +1740,10 @@
       "id": 107,
       "section": "knee",
       "question": "All three hamstring muscles can create which movements?",
-      "correctAnswer": "Flexion of the knee and extension of the hip",
+      "type": "single",
+      "correctAnswers": [
+        "Flexion of the knee and extension of the hip"
+      ],
       "wrongAnswers": [
         "Extension of the knee and flexion of the hip",
         "Flexion of the knee and flexion of the hip",
@@ -1429,7 +1756,10 @@
       "id": 108,
       "section": "knee",
       "question": "All four of the quadriceps muscles insert together on which bony landmark?",
-      "correctAnswer": "Tibial tuberosity",
+      "type": "single",
+      "correctAnswers": [
+        "Tibial tuberosity"
+      ],
       "wrongAnswers": [
         "Head of fibula",
         "Medial condyle of tibia",
@@ -1442,7 +1772,10 @@
       "id": 109,
       "section": "knee",
       "question": "Which of the following muscles inserts on the bony landmark shown?",
-      "correctAnswer": "Semimembranosus",
+      "type": "single",
+      "correctAnswers": [
+        "Semimembranosus"
+      ],
       "wrongAnswers": [
         "Semitendinosus",
         "Biceps femoris",
@@ -1455,7 +1788,10 @@
       "id": 110,
       "section": "knee",
       "question": "Which muscle has an origin at the ischial tuberosity?",
-      "correctAnswer": "Biceps femoris",
+      "type": "single",
+      "correctAnswers": [
+        "Biceps femoris"
+      ],
       "wrongAnswers": [
         "Semitendinosus",
         "Semimembranosus",
@@ -1468,7 +1804,10 @@
       "id": 111,
       "section": "knee",
       "question": "The image shows which muscle?",
-      "correctAnswer": "Rectus femoris",
+      "type": "single",
+      "correctAnswers": [
+        "Rectus femoris"
+      ],
       "wrongAnswers": [
         "Vastus lateralis",
         "Vastus medialis",
@@ -1481,7 +1820,10 @@
       "id": 112,
       "section": "knee",
       "question": "Which of the following muscles inserts on the bony landmark shown?",
-      "correctAnswer": "Biceps femoris",
+      "type": "single",
+      "correctAnswers": [
+        "Biceps femoris"
+      ],
       "wrongAnswers": [
         "Semitendinosus",
         "Semimembranosus",
@@ -1494,11 +1836,14 @@
       "id": 113,
       "section": "knee",
       "question": "The image shows which muscle?",
-      "correctAnswer": "Vastus medialis",
+      "type": "single",
+      "correctAnswers": [
+        "Vastus medialis"
+      ],
       "wrongAnswers": [
-        "Popliteus",
-        "Semitendinosus",
-        "Rectus femoris"
+        "Semimembranosus",
+        "Rectus femoris",
+        "Biceps femoris"
       ],
       "explanation": "The correct answer is: Vastus medialis",
       "image": "image30.jpeg"
@@ -1507,7 +1852,10 @@
       "id": 114,
       "section": "knee",
       "question": "The image of the bony landmark shows the origin of which muscle?",
-      "correctAnswer": "Rectus femoris",
+      "type": "single",
+      "correctAnswers": [
+        "Rectus femoris"
+      ],
       "wrongAnswers": [
         "Vastus lateralis",
         "Vastus medialis",
@@ -1520,7 +1868,10 @@
       "id": 115,
       "section": "knee",
       "question": "Which quadricep muscle can act to flex the hip joint as well as extend the knee joint?",
-      "correctAnswer": "Rectus femoris",
+      "type": "single",
+      "correctAnswers": [
+        "Rectus femoris"
+      ],
       "wrongAnswers": [
         "Vastus lateralis",
         "Vastus medialis",
@@ -1533,7 +1884,10 @@
       "id": 116,
       "section": "knee",
       "question": "Which of the hamstring muscles can create lateral rotation of a flexed knee?",
-      "correctAnswer": "Biceps femoris",
+      "type": "single",
+      "correctAnswers": [
+        "Biceps femoris"
+      ],
       "wrongAnswers": [
         "Semitendinosus",
         "Semimembranosus",
@@ -1546,7 +1900,10 @@
       "id": 117,
       "section": "ankle",
       "question": "Which of the following muscles does plantarflexion of the ankle and assists in flexion of the knee?",
-      "correctAnswer": "Gastrocnemius",
+      "type": "single",
+      "correctAnswers": [
+        "Gastrocnemius"
+      ],
       "wrongAnswers": [
         "Soleus",
         "Tibialis posterior",
@@ -1559,20 +1916,26 @@
       "id": 118,
       "section": "ankle",
       "question": "Which two muscles make up the anatomical stirrup?",
-      "correctAnswer": "Peroneus longus",
-      "wrongAnswers": [
-        "Peroneus brevis",
-        "Tibialis anterior",
-        "Tibialis posterior"
+      "type": "multi",
+      "correctAnswers": [
+        "Peroneus longus",
+        "Tibialis anterior"
       ],
-      "explanation": "The correct answer is: Peroneus longus",
+      "wrongAnswers": [
+        "Calcaneus via the Achilles tendon",
+        "Head of the fibula"
+      ],
+      "explanation": "The correct answer is: Peroneus longus, Tibialis anterior",
       "image": null
     },
     {
       "id": 119,
       "section": "ankle",
       "question": "Which muscle originates on the bony landmark shown?",
-      "correctAnswer": "Gastrocnemius (lateral head)",
+      "type": "single",
+      "correctAnswers": [
+        "Gastrocnemius (lateral head)"
+      ],
       "wrongAnswers": [
         "Gastrocnemius (medial head)",
         "Soleus",
@@ -1585,11 +1948,14 @@
       "id": 120,
       "section": "ankle",
       "question": "The image shows which of the following bony landmarks?",
-      "correctAnswer": "Calcaneus",
+      "type": "single",
+      "correctAnswers": [
+        "Calcaneus"
+      ],
       "wrongAnswers": [
-        "Medial cuneiform",
         "First metatarsal",
-        "Medial condyle of femur"
+        "Lateral malleolus",
+        "Medial malleolus"
       ],
       "explanation": "The correct answer is: Calcaneus",
       "image": "image33.jpeg"
@@ -1598,11 +1964,14 @@
       "id": 121,
       "section": "ankle",
       "question": "Which two muscles insert onto the medial cuneiform and base of the first metatarsal?",
-      "correctAnswer": "Fibularis/Peroneus longus and tibialis anterior",
+      "type": "single",
+      "correctAnswers": [
+        "Fibularis/Peroneus longus and tibialis anterior"
+      ],
       "wrongAnswers": [
+        "Flexor digitorum longus",
         "Extensor digitorum longus",
-        "Peroneus longus",
-        "Tibialis posterior"
+        "Peroneus brevis"
       ],
       "explanation": "The correct answer is: Fibularis/Peroneus longus and tibialis anterior",
       "image": null
@@ -1611,11 +1980,14 @@
       "id": 122,
       "section": "ankle",
       "question": "The image shows which of the following bony landmarks?",
-      "correctAnswer": "Head of the fibula",
+      "type": "single",
+      "correctAnswers": [
+        "Head of the fibula"
+      ],
       "wrongAnswers": [
-        "Calcaneus",
-        "Peroneus longus",
-        "Peroneus/Fibularis longus"
+        "Gastrocnemius (lateral head)",
+        "Peroneus/Fibularis longus",
+        "Soleus"
       ],
       "explanation": "The correct answer is: Head of the fibula",
       "image": "image34.jpeg"
@@ -1624,11 +1996,14 @@
       "id": 123,
       "section": "ankle",
       "question": "Which muscle originates on the bony landmark shown?",
-      "correctAnswer": "Peroneus/Fibularis longus",
+      "type": "single",
+      "correctAnswers": [
+        "Peroneus/Fibularis longus"
+      ],
       "wrongAnswers": [
-        "Gastrocnemius (medial head)",
-        "Gastrocnemius (lateral head)",
-        "Peroneus brevis"
+        "Soleus",
+        "Peroneus tertius",
+        "Gastrocnemius (lateral head)"
       ],
       "explanation": "The correct answer is: Peroneus/Fibularis longus",
       "image": "image35.jpeg"
@@ -1637,7 +2012,10 @@
       "id": 124,
       "section": "ankle",
       "question": "The image shows which of the following muscles?",
-      "correctAnswer": "Tibialis anterior",
+      "type": "single",
+      "correctAnswers": [
+        "Tibialis anterior"
+      ],
       "wrongAnswers": [
         "Tibialis posterior",
         "Peroneus longus",
@@ -1650,7 +2028,10 @@
       "id": 125,
       "section": "ankle",
       "question": "Which muscle does ONLY plantarflexion of the ankle?",
-      "correctAnswer": "Soleus",
+      "type": "single",
+      "correctAnswers": [
+        "Soleus"
+      ],
       "wrongAnswers": [
         "Gastrocnemius",
         "Tibialis posterior",
@@ -1663,11 +2044,14 @@
       "id": 126,
       "section": "ankle",
       "question": "The muscle pictured here does which two actions at the ankle?",
-      "correctAnswer": "Dorsiflexion and inversion",
+      "type": "single",
+      "correctAnswers": [
+        "Dorsiflexion and inversion"
+      ],
       "wrongAnswers": [
-        "Dorsiflexion of the ankle",
-        "Eversion of the foot",
-        "Extension of the toes"
+        "Extension of the toes",
+        "Plantarflexion of the ankle",
+        "Inversion of the foot"
       ],
       "explanation": "The correct answer is: Dorsiflexion and inversion",
       "image": null
@@ -1676,11 +2060,14 @@
       "id": 127,
       "section": "ankle",
       "question": "The gastrocnemius and soleus muscles insert onto which bony landmark?",
-      "correctAnswer": "Calcaneus via the Achilles tendon",
+      "type": "single",
+      "correctAnswers": [
+        "Calcaneus via the Achilles tendon"
+      ],
       "wrongAnswers": [
-        "Proximal tibia",
-        "Fifth metatarsal",
-        "Soleal line of tibia"
+        "Calcaneus (via Achilles tendon)",
+        "Head of fibula",
+        "Medial malleolus"
       ],
       "explanation": "The correct answer is: Calcaneus via the Achilles tendon",
       "image": null
@@ -1689,7 +2076,10 @@
       "id": 128,
       "section": "hip",
       "question": "The image shows which of the following muscles?",
-      "correctAnswer": "Adductor magnus",
+      "type": "single",
+      "correctAnswers": [
+        "Adductor magnus"
+      ],
       "wrongAnswers": [
         "Adductor longus",
         "Adductor brevis",
@@ -1702,7 +2092,10 @@
       "id": 129,
       "section": "hip",
       "question": "The head of the femur is the ball and the ___________is the socket of the hip joint.",
-      "correctAnswer": "Acetabulum",
+      "type": "single",
+      "correctAnswers": [
+        "Acetabulum"
+      ],
       "wrongAnswers": [
         "Greater trochanter",
         "Obturator foramen",
@@ -1715,11 +2108,14 @@
       "id": 130,
       "section": "hip",
       "question": "Gemellus superior, gemellus inferior, and quadratus femoris all originate from a place on which bone?",
-      "correctAnswer": "The ischium",
+      "type": "single",
+      "correctAnswers": [
+        "The ischium"
+      ],
       "wrongAnswers": [
-        "Obturator foramen",
-        "Ischial tuberosity",
-        "Iliac crest"
+        "ASIS (Anterior superior iliac spine)",
+        "Iliac fossa",
+        "Lesser trochanter"
       ],
       "explanation": "The correct answer is: The ischium",
       "image": null
@@ -1728,11 +2124,14 @@
       "id": 131,
       "section": "hip",
       "question": "The strongest hip flexor is the:",
-      "correctAnswer": "Iliopsoas",
+      "type": "single",
+      "correctAnswers": [
+        "Iliopsoas"
+      ],
       "wrongAnswers": [
-        "Iliacus",
-        "Adductor longus",
-        "Gluteus maximus"
+        "Rectus femoris",
+        "Gluteus maximus",
+        "Quadratus femoris"
       ],
       "explanation": "The correct answer is: Iliopsoas",
       "image": null
@@ -1741,10 +2140,13 @@
       "id": 132,
       "section": "hip",
       "question": "The four muscles: tensor fascia latae, sartorius, gluteus minimus, and gluteus medius, all do which action?",
-      "correctAnswer": "Abduction at the hip",
+      "type": "single",
+      "correctAnswers": [
+        "Abduction at the hip"
+      ],
       "wrongAnswers": [
+        "Adduction of the hip",
         "Flexion of the hip",
-        "External rotation of the hip",
         "Internal rotation of the hip"
       ],
       "explanation": "The correct answer is: Abduction at the hip",
@@ -1754,11 +2156,14 @@
       "id": 133,
       "section": "hip",
       "question": "The six muscles: gemellus superior, gemellus inferior, obturator internus, obturator externus, quadratus femoris, and piriformis, all do what as their primary action?",
-      "correctAnswer": "Lateral rotation of the hip",
+      "type": "single",
+      "correctAnswers": [
+        "Lateral rotation of the hip"
+      ],
       "wrongAnswers": [
-        "Flexion of the hip",
-        "Extension of the hip",
-        "External rotation of the hip"
+        "Internal rotation of the hip",
+        "External rotation of the hip",
+        "Extension of the hip"
       ],
       "explanation": "The correct answer is: Lateral rotation of the hip",
       "image": null
@@ -1767,11 +2172,14 @@
       "id": 134,
       "section": "hip",
       "question": "Which two muscles insert on the pes anserine?",
-      "correctAnswer": "Sartorius and gracilis",
+      "type": "single",
+      "correctAnswers": [
+        "Sartorius and gracilis"
+      ],
       "wrongAnswers": [
-        "Quadratus femoris",
-        "Psoas major",
-        "Gemellus superior"
+        "Obturator internus",
+        "Rectus femoris",
+        "Sartorius"
       ],
       "explanation": "The correct answer is: Sartorius and gracilis",
       "image": null
@@ -1780,11 +2188,14 @@
       "id": 135,
       "section": "hip",
       "question": "The image shows which muscle?",
-      "correctAnswer": "Gluteus minimus",
+      "type": "single",
+      "correctAnswers": [
+        "Gluteus minimus"
+      ],
       "wrongAnswers": [
-        "Iliacus",
-        "Adductor brevis",
-        "Gemellus superior"
+        "Obturator internus",
+        "Psoas major",
+        "Gemellus inferior"
       ],
       "explanation": "The correct answer is: Gluteus minimus",
       "image": "image38.jpeg"
@@ -1793,7 +2204,10 @@
       "id": 136,
       "section": "hip",
       "question": "The image shows which of the following bony landmarks?",
-      "correctAnswer": "Greater trochanter",
+      "type": "single",
+      "correctAnswers": [
+        "Greater trochanter"
+      ],
       "wrongAnswers": [
         "Lesser trochanter",
         "Intertrochanteric crest",
@@ -1806,11 +2220,14 @@
       "id": 137,
       "section": "hip",
       "question": "The image shows which of the following muscles?",
-      "correctAnswer": "Gracilis",
+      "type": "single",
+      "correctAnswers": [
+        "Gracilis"
+      ],
       "wrongAnswers": [
-        "Piriformis",
-        "Sartorius",
-        "Gemellus superior"
+        "Gluteus maximus",
+        "Adductor magnus",
+        "Quadratus femoris"
       ],
       "explanation": "The correct answer is: Gracilis",
       "image": "image40.jpeg"
@@ -1819,7 +2236,10 @@
       "id": 138,
       "section": "hip",
       "question": "Which of these muscles has an attachment on the sacrum?",
-      "correctAnswer": "Piriformis",
+      "type": "single",
+      "correctAnswers": [
+        "Piriformis"
+      ],
       "wrongAnswers": [
         "Obturator internus",
         "Gemellus superior",
@@ -1832,11 +2252,14 @@
       "id": 139,
       "section": "hip",
       "question": "Which of the following muscles originates on the anterior superior iliac spine?",
-      "correctAnswer": "Sartorius",
+      "type": "single",
+      "correctAnswers": [
+        "Sartorius"
+      ],
       "wrongAnswers": [
-        "Piriformis",
-        "Iliacus",
-        "Gemellus inferior"
+        "Tensor fasciae latae (TFL)",
+        "Gemellus superior",
+        "Gracilis"
       ],
       "explanation": "The correct answer is: Sartorius",
       "image": null
@@ -1845,7 +2268,10 @@
       "id": 140,
       "section": "hip",
       "question": "Which of the following muscles inserts on the greater trochanter?",
-      "correctAnswer": "All Answers are Correct",
+      "type": "single",
+      "correctAnswers": [
+        "All Answers are Correct"
+      ],
       "wrongAnswers": [
         "Only the first answer is correct",
         "Only the first two answers are correct",
@@ -1858,11 +2284,14 @@
       "id": 141,
       "section": "hip",
       "question": "The gluteus medius and gluteus minimus both originate from a place on which bone?",
-      "correctAnswer": "The Ilium",
+      "type": "single",
+      "correctAnswers": [
+        "The Ilium"
+      ],
       "wrongAnswers": [
-        "Greater trochanter",
         "Sartorius",
-        "Adductor longus"
+        "Gluteus medius",
+        "Adductor magnus"
       ],
       "explanation": "The correct answer is: The Ilium",
       "image": null
@@ -1871,11 +2300,14 @@
       "id": 142,
       "section": "hip",
       "question": "Which two muscles can do actions that are antagonistic to themselves?",
-      "correctAnswer": "Gluteus medius and gluteus minimus",
+      "type": "single",
+      "correctAnswers": [
+        "Gluteus medius and gluteus minimus"
+      ],
       "wrongAnswers": [
-        "Gluteus minimus",
-        "Gemellus superior",
-        "Gemellus inferior"
+        "Psoas major",
+        "Adductor longus",
+        "Gluteus medius"
       ],
       "explanation": "The correct answer is: Gluteus medius and gluteus minimus",
       "image": null
@@ -1884,11 +2316,14 @@
       "id": 143,
       "section": "hip",
       "question": "Which two muscles do lateral rotation of the femur?",
-      "correctAnswer": "Quadratus femoris and iliopsoas",
+      "type": "single",
+      "correctAnswers": [
+        "Quadratus femoris and iliopsoas"
+      ],
       "wrongAnswers": [
-        "Gluteus maximus",
-        "Gemellus superior",
-        "Iliacus"
+        "Obturator internus",
+        "Adductor magnus",
+        "Gemellus inferior"
       ],
       "explanation": "The correct answer is: Quadratus femoris and iliopsoas",
       "image": null
@@ -1897,11 +2332,14 @@
       "id": 144,
       "section": "hip",
       "question": "Which two muscles do flexion of the femur?",
-      "correctAnswer": "Iliopsoas and gluteus medius",
+      "type": "single",
+      "correctAnswers": [
+        "Iliopsoas and gluteus medius"
+      ],
       "wrongAnswers": [
-        "Gluteus medius",
-        "Sartorius",
-        "Iliacus"
+        "Gracilis",
+        "Gluteus minimus",
+        "Obturator externus"
       ],
       "explanation": "The correct answer is: Iliopsoas and gluteus medius",
       "image": null
@@ -1910,7 +2348,10 @@
       "id": 145,
       "section": "hip",
       "question": "Which of the following muscles does NOT do medial rotation?",
-      "correctAnswer": "Gluteus maximus",
+      "type": "single",
+      "correctAnswers": [
+        "Gluteus maximus"
+      ],
       "wrongAnswers": [
         "Gluteus medius",
         "Gluteus minimus",
@@ -1923,11 +2364,14 @@
       "id": 146,
       "section": "hip",
       "question": "Which muscle is known as the tailor's muscle?",
-      "correctAnswer": "Sartorius",
+      "type": "single",
+      "correctAnswers": [
+        "Sartorius"
+      ],
       "wrongAnswers": [
-        "Pectineus",
-        "Psoas major",
-        "Obturator internus"
+        "Iliacus",
+        "Gemellus inferior",
+        "Gluteus minimus"
       ],
       "explanation": "The correct answer is: Sartorius",
       "image": null
@@ -1936,11 +2380,14 @@
       "id": 147,
       "section": "hip",
       "question": "The five muscles: pectineus, adductor brevis, adductor longus, gracilis, and adductor magnus, all do what as their primary action?",
-      "correctAnswer": "Adduction of the hip",
+      "type": "single",
+      "correctAnswers": [
+        "Adduction of the hip"
+      ],
       "wrongAnswers": [
-        "Abduction of the hip",
-        "Flexion of the hip",
-        "Internal rotation of the hip"
+        "Lateral rotation of the hip",
+        "Internal rotation of the hip",
+        "Extension of the hip"
       ],
       "explanation": "The correct answer is: Adduction of the hip",
       "image": null
@@ -1949,11 +2396,14 @@
       "id": 148,
       "section": "hip",
       "question": "Which of these muscles does NOT attach to the greater trochanter?",
-      "correctAnswer": "All attach to the greater trochanter",
+      "type": "single",
+      "correctAnswers": [
+        "All attach to the greater trochanter"
+      ],
       "wrongAnswers": [
-        "Ischial tuberosity",
-        "IT band",
-        "Trochanteric fossa"
+        "Greater trochanter",
+        "Trochanteric fossa",
+        "Lesser trochanter"
       ],
       "explanation": "The correct answer is: All attach to the greater trochanter",
       "image": null
@@ -1962,11 +2412,14 @@
       "id": 149,
       "section": "hip",
       "question": "Which two muscles can do extension of the femur?",
-      "correctAnswer": "Adductor magnus and gluteus maximus",
+      "type": "single",
+      "correctAnswers": [
+        "Adductor magnus and gluteus maximus"
+      ],
       "wrongAnswers": [
-        "Psoas major",
-        "Gluteus minimus",
-        "Tensor fasciae latae (TFL)"
+        "Pectineus",
+        "Adductor brevis",
+        "Gluteus minimus"
       ],
       "explanation": "The correct answer is: Adductor magnus and gluteus maximus",
       "image": null
@@ -1975,11 +2428,14 @@
       "id": 150,
       "section": "hip",
       "question": "Which of the following muscles insert on the linea aspera?",
-      "correctAnswer": "All are correct",
+      "type": "single",
+      "correctAnswers": [
+        "All are correct"
+      ],
       "wrongAnswers": [
-        "Gluteus medius",
-        "All Answers are Correct",
-        "Sartorius and gracilis"
+        "Lateral rotation",
+        "Gluteus minimus",
+        "Adductor magnus"
       ],
       "explanation": "The correct answer is: All are correct",
       "image": null
@@ -1988,7 +2444,10 @@
       "id": 151,
       "section": "hip",
       "question": "The image shows which of the following muscles?",
-      "correctAnswer": "Adductor longus",
+      "type": "single",
+      "correctAnswers": [
+        "Adductor longus"
+      ],
       "wrongAnswers": [
         "Adductor magnus",
         "Adductor brevis",
@@ -2001,11 +2460,14 @@
       "id": 152,
       "section": "hip",
       "question": "The image shows which muscle?",
-      "correctAnswer": "Sartorius",
+      "type": "single",
+      "correctAnswers": [
+        "Sartorius"
+      ],
       "wrongAnswers": [
         "Psoas major",
-        "Gemellus inferior",
-        "Adductor brevis"
+        "Iliacus",
+        "Quadratus femoris"
       ],
       "explanation": "The correct answer is: Sartorius",
       "image": "image42.jpeg"
@@ -2014,11 +2476,14 @@
       "id": 153,
       "section": "hip",
       "question": "The five adductor muscles all originate from a place on which bone?",
-      "correctAnswer": "The pubic bone",
+      "type": "single",
+      "correctAnswers": [
+        "The pubic bone"
+      ],
       "wrongAnswers": [
-        "Trochanteric fossa",
-        "Ischium",
-        "AIIS (Anterior inferior iliac spine)"
+        "IT band",
+        "Acetabulum",
+        "ASIS (Anterior superior iliac spine)"
       ],
       "explanation": "The correct answer is: The pubic bone",
       "image": null
@@ -2027,11 +2492,14 @@
       "id": 154,
       "section": "hip",
       "question": "Which muscle(s) insert on the tendinous iliotibial band (IT band)?",
-      "correctAnswer": "Gluteus maximus and Tensor fascia latae",
+      "type": "single",
+      "correctAnswers": [
+        "Gluteus maximus and Tensor fascia latae"
+      ],
       "wrongAnswers": [
-        "Iliacus",
-        "Obturator internus",
-        "Gracilis"
+        "Gluteus minimus",
+        "Sartorius",
+        "Adductor longus"
       ],
       "explanation": "The correct answer is: Gluteus maximus and Tensor fascia latae",
       "image": null
@@ -2040,11 +2508,14 @@
       "id": 155,
       "section": "hip",
       "question": "Iliopsoas and gluteus maximus are synergistic (work together) in which of the following actions?",
-      "correctAnswer": "Lateral rotation",
+      "type": "single",
+      "correctAnswers": [
+        "Lateral rotation"
+      ],
       "wrongAnswers": [
-        "Abduction of the hip",
+        "External rotation of the hip",
         "Adduction of the hip",
-        "Flexion of the hip"
+        "Extension of the hip"
       ],
       "explanation": "The correct answer is: Lateral rotation",
       "image": null
@@ -2053,7 +2524,10 @@
       "id": 156,
       "section": "hip",
       "question": "Which muscle originates between the superior and middle gluteal lines?",
-      "correctAnswer": "Gluteus medius",
+      "type": "single",
+      "correctAnswers": [
+        "Gluteus medius"
+      ],
       "wrongAnswers": [
         "Gluteus minimus",
         "Gluteus maximus",
@@ -2066,7 +2540,10 @@
       "id": 157,
       "section": "neck",
       "question": "The image shows which of the following bony landmarks?",
-      "correctAnswer": "Manubrium of the sternum",
+      "type": "single",
+      "correctAnswers": [
+        "Manubrium of the sternum"
+      ],
       "wrongAnswers": [
         "Body of the sternum",
         "Xiphoid process",
@@ -2079,7 +2556,10 @@
       "id": 158,
       "section": "neck",
       "question": "Which muscle unilaterally rotates the head to the opposite side?",
-      "correctAnswer": "Sternocleidomastoid",
+      "type": "single",
+      "correctAnswers": [
+        "Sternocleidomastoid"
+      ],
       "wrongAnswers": [
         "Splenius capitis",
         "Anterior scalene",
@@ -2092,7 +2572,10 @@
       "id": 159,
       "section": "neck",
       "question": "The image shown is the origin of which muscle?",
-      "correctAnswer": "Scalenes",
+      "type": "single",
+      "correctAnswers": [
+        "Scalenes"
+      ],
       "wrongAnswers": [
         "Sternocleidomastoid",
         "Levator scapulae",
@@ -2105,11 +2588,14 @@
       "id": 160,
       "section": "neck",
       "question": "Both sternocleidomastoid and scalenes do which action?",
-      "correctAnswer": "Flex the neck",
+      "type": "single",
+      "correctAnswers": [
+        "Flex the neck"
+      ],
       "wrongAnswers": [
         "All Answers are Correct",
-        "Manubrium of the sternum",
-        "Splenius cervicis"
+        "Scalenes",
+        "First Rib"
       ],
       "explanation": "The correct answer is: Flex the neck",
       "image": null
@@ -2118,11 +2604,14 @@
       "id": 161,
       "section": "neck",
       "question": "The image shows which of the following bony landmarks?",
-      "correctAnswer": "Transverse processes C1-C3",
+      "type": "single",
+      "correctAnswers": [
+        "Transverse processes C1-C3"
+      ],
       "wrongAnswers": [
-        "Medial clavicle",
-        "Second rib",
-        "Spinous processes of C7-T3"
+        "Transverse processes of C3-C6",
+        "Occipital bone",
+        "External occipital protuberance"
       ],
       "explanation": "The correct answer is: Transverse processes C1-C3",
       "image": "image45.jpeg"
@@ -2131,20 +2620,26 @@
       "id": 162,
       "section": "neck",
       "question": "Which muscle(s) rotates the head to the same side?",
-      "correctAnswer": "Splenius capitis",
-      "wrongAnswers": [
-        "Sternocleidomastoid",
-        "Semispinalis capitis",
+      "type": "multi",
+      "correctAnswers": [
+        "Splenius capitis",
         "Splenius cervicis"
       ],
-      "explanation": "The correct answer is: Splenius capitis",
+      "wrongAnswers": [
+        "Mastoid process",
+        "Anterior scalene"
+      ],
+      "explanation": "The correct answer is: Splenius capitis, Splenius cervicis",
       "image": null
     },
     {
       "id": 163,
       "section": "neck",
       "question": "Which muscle acts to laterally flex the head to the same side?",
-      "correctAnswer": "All Answers are Correct",
+      "type": "single",
+      "correctAnswers": [
+        "All Answers are Correct"
+      ],
       "wrongAnswers": [
         "Only the first answer is correct",
         "Only the first two answers are correct",
@@ -2157,11 +2652,14 @@
       "id": 164,
       "section": "neck",
       "question": "Anterior and middle scalenes insert where?",
-      "correctAnswer": "First Rib",
+      "type": "single",
+      "correctAnswers": [
+        "First Rib"
+      ],
       "wrongAnswers": [
         "Nuchal line",
-        "Transverse processes of C1-C4",
-        "Occipital bone"
+        "Superior nuchal line",
+        "Second rib"
       ],
       "explanation": "The correct answer is: First Rib",
       "image": null
@@ -2170,7 +2668,10 @@
       "id": 165,
       "section": "neck",
       "question": "The image shows which of the following muscles?",
-      "correctAnswer": "Sternocleidomastoid",
+      "type": "single",
+      "correctAnswers": [
+        "Sternocleidomastoid"
+      ],
       "wrongAnswers": [
         "Splenius capitis",
         "Anterior scalene",
@@ -2183,11 +2684,14 @@
       "id": 166,
       "section": "neck",
       "question": "Both splenius capitis and sternocleidomastoid insert on which bony landmark?",
-      "correctAnswer": "The mastoid process",
+      "type": "single",
+      "correctAnswers": [
+        "The mastoid process"
+      ],
       "wrongAnswers": [
-        "External occipital protuberance",
-        "Spinous processes of C7-T3",
-        "Transverse processes of C3-C6"
+        "Manubrium of the sternum",
+        "Mastoid process",
+        "First rib"
       ],
       "explanation": "The correct answer is: The mastoid process",
       "image": null
@@ -2196,7 +2700,10 @@
       "id": 167,
       "section": "neck",
       "question": "The image shows which of the following muscles?",
-      "correctAnswer": "Scalenes",
+      "type": "single",
+      "correctAnswers": [
+        "Scalenes"
+      ],
       "wrongAnswers": [
         "Sternocleidomastoid",
         "Levator scapulae",
@@ -2209,7 +2716,10 @@
       "id": 168,
       "section": "neck",
       "question": "The image shows which of the following bony landmarks?",
-      "correctAnswer": "Mastoid process",
+      "type": "single",
+      "correctAnswers": [
+        "Mastoid process"
+      ],
       "wrongAnswers": [
         "Transverse processes of C1-C4",
         "External occipital protuberance",
@@ -2222,7 +2732,10 @@
       "id": 169,
       "section": "neck",
       "question": "The manubrium of the sternum and the medial clavicle are the origins of which muscle?",
-      "correctAnswer": "Sternocleidomastoid",
+      "type": "single",
+      "correctAnswers": [
+        "Sternocleidomastoid"
+      ],
       "wrongAnswers": [
         "Splenius capitis",
         "Anterior scalene",
@@ -2235,11 +2748,14 @@
       "id": 170,
       "section": "neck",
       "question": "The image shows the origin of which muscle?",
-      "correctAnswer": "Splenius cervicis",
+      "type": "single",
+      "correctAnswers": [
+        "Splenius cervicis"
+      ],
       "wrongAnswers": [
         "Sternocleidomastoid",
-        "Upper trapezius",
-        "Middle scalene"
+        "Longus capitis",
+        "Longus colli"
       ],
       "explanation": "The correct answer is: Splenius cervicis",
       "image": null
@@ -2248,7 +2764,10 @@
       "id": 171,
       "section": "trunk",
       "question": "Which muscle is known as the hip hiker?",
-      "correctAnswer": "Quadratus lumborum",
+      "type": "single",
+      "correctAnswers": [
+        "Quadratus lumborum"
+      ],
       "wrongAnswers": [
         "Erector spinae",
         "External obliques",
@@ -2261,7 +2780,10 @@
       "id": 172,
       "section": "trunk",
       "question": "The image shows the bony landmark, which is the:",
-      "correctAnswer": "Origin of external obliques",
+      "type": "single",
+      "correctAnswers": [
+        "Origin of external obliques"
+      ],
       "wrongAnswers": [
         "Insertion of external obliques",
         "Origin of internal obliques",
@@ -2274,7 +2796,10 @@
       "id": 173,
       "section": "trunk",
       "question": "When acting unilaterally, the internal obliques do which actions?",
-      "correctAnswer": "Laterally flex the trunk and rotate it to the same side",
+      "type": "single",
+      "correctAnswers": [
+        "Laterally flex the trunk and rotate it to the same side"
+      ],
       "wrongAnswers": [
         "Laterally flex the trunk and rotate it to the opposite side",
         "Flex the trunk and rotate it to the same side",
@@ -2287,11 +2812,14 @@
       "id": 174,
       "section": "trunk",
       "question": "The image shows which of the following bony landmarks?",
-      "correctAnswer": "Pubic symphysis",
+      "type": "single",
+      "correctAnswers": [
+        "Pubic symphysis"
+      ],
       "wrongAnswers": [
-        "Transverse processes of L1-L4",
         "Spinous processes",
-        "Lower 8 ribs"
+        "Iliac crest",
+        "Twelfth rib"
       ],
       "explanation": "The correct answer is: Pubic symphysis",
       "image": "image49.jpeg"
@@ -2300,11 +2828,14 @@
       "id": 175,
       "section": "trunk",
       "question": "Which of these erector spinae muscles can rotate the head to the same side?",
-      "correctAnswer": "Longissimus capitis",
+      "type": "single",
+      "correctAnswers": [
+        "Longissimus capitis"
+      ],
       "wrongAnswers": [
-        "Quadratus lumborum",
-        "Laterally flex the trunk and rotate it to the opposite side",
-        "Insertion of spinalis thoracis"
+        "Extend the spine",
+        "Insertion of spinalis thoracis",
+        "Transverse abdominis"
       ],
       "explanation": "The correct answer is: Longissimus capitis",
       "image": null
@@ -2313,11 +2844,14 @@
       "id": 176,
       "section": "trunk",
       "question": "The image shows which of the following muscles?",
-      "correctAnswer": "Transverse abdominis",
+      "type": "single",
+      "correctAnswers": [
+        "Transverse abdominis"
+      ],
       "wrongAnswers": [
-        "Extend the spine",
-        "Origin of external obliques",
-        "Longissimus capitis"
+        "Insertion of spinalis thoracis",
+        "Laterally flex the trunk and rotate it to the same side",
+        "Extend the spine"
       ],
       "explanation": "The correct answer is: Transverse abdominis",
       "image": "image50.jpeg"
@@ -2326,7 +2860,10 @@
       "id": 177,
       "section": "trunk",
       "question": "Which of the following does NOT have an attachment on the iliac crest?",
-      "correctAnswer": "Rectus abdominis",
+      "type": "single",
+      "correctAnswers": [
+        "Rectus abdominis"
+      ],
       "wrongAnswers": [
         "External obliques",
         "Transversus abdominis",
@@ -2339,11 +2876,14 @@
       "id": 178,
       "section": "trunk",
       "question": "The erector spinae muscles, from most medial to most laterally located, are:",
-      "correctAnswer": "Spinalis, longissimus, iliocostalis",
+      "type": "single",
+      "correctAnswers": [
+        "Spinalis, longissimus, iliocostalis"
+      ],
       "wrongAnswers": [
-        "Origin of external obliques",
-        "Transverse abdominis",
-        "Rectus abdominis"
+        "Longissimus capitis",
+        "Laterally flex the trunk and rotate it to the opposite side",
+        "Insertion of spinalis thoracis"
       ],
       "explanation": "The correct answer is: Spinalis, longissimus, iliocostalis",
       "image": null
@@ -2352,7 +2892,10 @@
       "id": 179,
       "section": "trunk",
       "question": "When acting unilaterally, the external obliques do which actions?",
-      "correctAnswer": "Laterally flex the trunk and rotate it to the opposite side",
+      "type": "single",
+      "correctAnswers": [
+        "Laterally flex the trunk and rotate it to the opposite side"
+      ],
       "wrongAnswers": [
         "Laterally flex the trunk and rotate it to the same side",
         "Flex the trunk and rotate it to the opposite side",
@@ -2365,11 +2908,14 @@
       "id": 180,
       "section": "trunk",
       "question": "Which of the following acts to flex the trunk and compress its contents?",
-      "correctAnswer": "All are Correct",
+      "type": "single",
+      "correctAnswers": [
+        "All are Correct"
+      ],
       "wrongAnswers": [
-        "Pubic symphysis",
-        "Spinalis, longissimus, iliocostalis",
-        "Sacrum"
+        "Quadratus lumborum",
+        "Origin of external obliques",
+        "Laterally flex the trunk and rotate it to the same side"
       ],
       "explanation": "The correct answer is: All are Correct",
       "image": null
@@ -2378,11 +2924,14 @@
       "id": 181,
       "section": "trunk",
       "question": "The image shows which of the following bony landmarks?",
-      "correctAnswer": "Sacrum",
+      "type": "single",
+      "correctAnswers": [
+        "Sacrum"
+      ],
       "wrongAnswers": [
-        "Spinalis, longissimus, iliocostalis",
-        "Pubic symphysis",
-        "Quadratus lumborum"
+        "Longissimus capitis",
+        "Laterally flex the trunk and rotate it to the same side",
+        "Spinalis, longissimus, iliocostalis"
       ],
       "explanation": "The correct answer is: Sacrum",
       "image": "image51.jpeg"
@@ -2391,11 +2940,14 @@
       "id": 182,
       "section": "trunk",
       "question": "The image shows the bony landmark which is the:",
-      "correctAnswer": "Insertion of spinalis thoracis",
+      "type": "single",
+      "correctAnswers": [
+        "Insertion of spinalis thoracis"
+      ],
       "wrongAnswers": [
-        "Lower 8 ribs",
-        "Costal cartilages",
-        "Transverse processes of L1-L4"
+        "Twelfth rib",
+        "Xiphoid process",
+        "Ribs 5-12"
       ],
       "explanation": "The correct answer is: Insertion of spinalis thoracis",
       "image": "image52.jpeg"
@@ -2404,11 +2956,14 @@
       "id": 183,
       "section": "trunk",
       "question": "What action do all of the erector spinae muscles do?",
-      "correctAnswer": "Extend the spine",
+      "type": "single",
+      "correctAnswers": [
+        "Extend the spine"
+      ],
       "wrongAnswers": [
-        "All are Correct",
-        "Lateral flexion of the trunk",
-        "Rectus abdominis"
+        "Origin of external obliques",
+        "Quadratus lumborum",
+        "Longissimus capitis"
       ],
       "explanation": "The correct answer is: Extend the spine",
       "image": null
@@ -2417,7 +2972,10 @@
       "id": 184,
       "section": "trunk",
       "question": "The image shows which of the following muscles?",
-      "correctAnswer": "Quadratus lumborum",
+      "type": "single",
+      "correctAnswers": [
+        "Quadratus lumborum"
+      ],
       "wrongAnswers": [
         "Erector spinae",
         "External obliques",
@@ -2430,11 +2988,14 @@
       "id": 185,
       "section": "trunk",
       "question": "What is the primary action of the muscle in the image here?",
-      "correctAnswer": "Lateral flexion of the trunk",
+      "type": "single",
+      "correctAnswers": [
+        "Lateral flexion of the trunk"
+      ],
       "wrongAnswers": [
-        "Flexion of the trunk",
-        "Compression of abdominal contents",
-        "Extension of the trunk"
+        "Extension of the trunk",
+        "Elevation of the pelvis (hip hiking)",
+        "Posterior pelvic tilt"
       ],
       "explanation": "The correct answer is: Lateral flexion of the trunk",
       "image": "image54.jpeg"
@@ -2443,7 +3004,10 @@
       "id": 186,
       "section": "breathing",
       "question": "The diaphragm:",
-      "correctAnswer": "All answers are correct",
+      "type": "single",
+      "correctAnswers": [
+        "All answers are correct"
+      ],
       "wrongAnswers": [
         "Only the first answer is correct",
         "Only the first two answers are correct",
@@ -2456,11 +3020,15 @@
       "id": 187,
       "section": "breathing",
       "question": "Which of the following is/are the origin(s) of the diaphragm? (Select all that apply)",
-      "correctAnswer": "Vertebrae L1-L3, Xiphoid process, Lower 6 costal cartilages",
-      "wrongAnswers": [
-        "Sternum",
-        "Lower 6 ribs",
+      "type": "multi",
+      "correctAnswers": [
+        "Vertebrae L1-L3",
+        "Xiphoid process",
         "Lower 6 costal cartilages"
+      ],
+      "wrongAnswers": [
+        "Central tendon",
+        "Costal margin"
       ],
       "explanation": "The correct answer is: Vertebrae L1-L3, Xiphoid process, Lower 6 costal cartilages",
       "image": null
@@ -2469,7 +3037,10 @@
       "id": 188,
       "section": "breathing",
       "question": "Which of the following muscles brings the ribs down during forced expiration?",
-      "correctAnswer": "Internal intercostals",
+      "type": "single",
+      "correctAnswers": [
+        "Internal intercostals"
+      ],
       "wrongAnswers": [
         "External intercostals",
         "Diaphragm",
@@ -2482,7 +3053,10 @@
       "id": 189,
       "section": "breathing",
       "question": "The image shows which of the following muscles?",
-      "correctAnswer": "Diaphragm",
+      "type": "single",
+      "correctAnswers": [
+        "Diaphragm"
+      ],
       "wrongAnswers": [
         "External intercostals",
         "Internal intercostals",
@@ -2495,11 +3069,14 @@
       "id": 190,
       "section": "breathing",
       "question": "The internal intercostals originate and insert:",
-      "correctAnswer": "Between adjacent ribs",
+      "type": "single",
+      "correctAnswers": [
+        "Between adjacent ribs"
+      ],
       "wrongAnswers": [
-        "Central tendon",
-        "Costal margin",
-        "Upper 6 ribs"
+        "Vertebrae L1-L3",
+        "Lower 6 costal cartilages",
+        "Costal margin"
       ],
       "explanation": "The correct answer is: Between adjacent ribs",
       "image": null
@@ -2508,7 +3085,10 @@
       "id": 191,
       "section": "breathing",
       "question": "Which muscle originates on the inferior border of the rib above and inserts on the superior border of the rib below?",
-      "correctAnswer": "External intercostals",
+      "type": "single",
+      "correctAnswers": [
+        "External intercostals"
+      ],
       "wrongAnswers": [
         "Internal intercostals",
         "Diaphragm",
@@ -2521,7 +3101,10 @@
       "id": 192,
       "section": "breathing",
       "question": "Elevation of the ribs in inspiration is the action of which muscle?",
-      "correctAnswer": "External intercostals",
+      "type": "single",
+      "correctAnswers": [
+        "External intercostals"
+      ],
       "wrongAnswers": [
         "Internal intercostals",
         "Diaphragm",

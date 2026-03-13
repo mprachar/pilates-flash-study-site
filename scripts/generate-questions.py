@@ -364,6 +364,8 @@ TARGETED_DISTRACTORS = {
     'rectus abdominis': ['External obliques', 'Transversus abdominis', 'Internal obliques'],
     # Breathing muscles
     'all answers are correct': ['Only the first answer is correct', 'Only the first two answers are correct', 'None of the answers are correct'],
+    # Multi-answer overrides (keyed by first correct answer lowercase)
+    'all of the above': ['Only the first answer is correct', 'Only the first two answers are correct', 'None of the answers are correct'],
     'diaphragm': ['External intercostals', 'Internal intercostals', 'Scalenes'],
     'internal intercostals': ['External intercostals', 'Diaphragm', 'Transversus abdominis'],
     'external intercostals': ['Internal intercostals', 'Diaphragm', 'Serratus anterior'],
@@ -555,6 +557,11 @@ for start, end, slug, name in sections_def:
     if current_q:
         questions_in_section.append(current_q)
 
+    # Auto-detect multi-answer questions: if >1 answers and not T/F, mark as multi
+    for q in questions_in_section:
+        if q['type'] == 'single' and len(q['answers']) > 1:
+            q['type'] = 'multi'
+
     # Map images using the CORRECT XML-based IMAGE_ROW_MAP
     for idx, q in enumerate(questions_in_section):
         q_start = q['_startRow']
@@ -589,41 +596,105 @@ output = {
 }
 
 for q in parsed_questions:
-    correct = q['answers'][0] if q['answers'] else ''
-    if not correct:
+    if not q['answers']:
         continue
 
-    # For multi-answer questions, join them
-    if len(q['answers']) > 1 and q['type'] == 'multi':
-        correct = ', '.join(q['answers'])
-
+    correct_answers = q['answers']  # Always a list
     section_correct = list(section_answers.get(q['section'], set()))
-    distractors = get_distractors(q['text'], correct, q['section'], section_correct)
 
-    # For T/F questions, use True/False as answers
     if q['type'] == 'tf':
-        if correct.lower() == 'true':
+        # True/False: single correct, one wrong
+        correct_answers = [correct_answers[0]]
+        if correct_answers[0].lower() == 'true':
             distractors = ['False']
         else:
             distractors = ['True']
+    elif q['type'] == 'multi':
+        # Multi-answer: generate distractors that are NOT any of the correct answers
+        # and are in the same category as the correct answers
+        correct_lower_set = {a.lower().strip() for a in correct_answers}
+        pool = SECTION_POOLS.get(q['section'], {})
 
-    # Make sure we have at least 3 distractors (or 1 for T/F)
-    min_distractors = 1 if q['type'] == 'tf' else 3
-    if len(distractors) < min_distractors:
-        padding = ['None of the above', 'All of the above', 'Cannot be determined']
-        for p in padding:
-            if len(distractors) >= min_distractors:
-                break
-            if p.lower() != correct.lower():
-                distractors.append(p)
+        # Classify first correct answer to find the right category
+        answer_category = classify_answer(correct_answers[0], pool)
+
+        # Get same-category candidates from pool + section
+        candidates = []
+        seen = set(correct_lower_set)
+
+        # Same category from pool first
+        if answer_category and answer_category in pool:
+            for v in pool[answer_category]:
+                vl = v.lower().strip()
+                if vl not in seen:
+                    candidates.append(v)
+                    seen.add(vl)
+
+        # Same category from section answers
+        for a in section_correct:
+            al = a.lower().strip()
+            if al not in seen:
+                a_cat = classify_answer(a, pool)
+                if a_cat == answer_category:
+                    candidates.append(a)
+                    seen.add(al)
+
+        # Any remaining section answers
+        for a in section_correct:
+            al = a.lower().strip()
+            if al not in seen:
+                candidates.append(a)
+                seen.add(al)
+
+        random.shuffle(candidates)
+        # Need enough wrong answers so total options >= 4 (or at least 2 wrong)
+        needed = max(2, 4 - len(correct_answers))
+        distractors = candidates[:needed]
+
+        if len(distractors) < needed:
+            # Pull more from all pool values
+            all_pool = []
+            for values in pool.values():
+                all_pool.extend(values)
+            random.shuffle(all_pool)
+            for c in all_pool:
+                if len(distractors) >= needed:
+                    break
+                cl = c.lower().strip()
+                if cl not in seen:
+                    distractors.append(c)
+                    seen.add(cl)
+
+        if len(distractors) < needed:
+            padding = ['None of the above', 'Cannot be determined']
+            for p in padding:
+                if len(distractors) >= needed:
+                    break
+                if p.lower() not in seen:
+                    distractors.append(p)
+        distractors = distractors[:needed]
+    else:
+        # Single answer
+        correct_answers = [correct_answers[0]]
+        distractors = get_distractors(q['text'], correct_answers[0], q['section'], section_correct)
+        min_distractors = 3
+        if len(distractors) < min_distractors:
+            padding = ['None of the above', 'All of the above', 'Cannot be determined']
+            for p in padding:
+                if len(distractors) >= min_distractors:
+                    break
+                if p.lower() != correct_answers[0].lower():
+                    distractors.append(p)
+        distractors = distractors[:3]
 
     question_obj = {
         'id': q['id'],
         'section': q['section'],
         'question': q['text'],
-        'correctAnswer': correct,
-        'wrongAnswers': distractors[:min_distractors if q['type'] == 'tf' else 3],
-        'explanation': build_explanation(q['text'], correct, q['type']),
+        'type': q['type'],  # 'single', 'multi', 'tf'
+        'correctAnswers': correct_answers,
+        'wrongAnswers': distractors,
+        'explanation': build_explanation(q['text'], ', '.join(correct_answers), q['type']),
         'image': q['image'],
     }
     output['questions'].append(question_obj)
@@ -644,14 +715,27 @@ with open('data/questions.json', 'w') as f:
     json.dump(output, f, indent=2)
 
 print(f"Generated {len(output['questions'])} questions")
-print(f"  T/F: {sum(1 for q in output['questions'] if len(q['wrongAnswers']) == 1)}")
-print(f"  Multiple choice: {sum(1 for q in output['questions'] if len(q['wrongAnswers']) == 3)}")
+print(f"  Single: {sum(1 for q in output['questions'] if q['type'] == 'single')}")
+print(f"  Multi-answer: {sum(1 for q in output['questions'] if q['type'] == 'multi')}")
+print(f"  T/F: {sum(1 for q in output['questions'] if q['type'] == 'tf')}")
 print(f"  With images: {sum(1 for q in output['questions'] if q['image'])}")
 
-# Verify distractor quality
+# Verify no correct answer appears in wrong answers
+overlaps = 0
+for q in output['questions']:
+    correct_set = {a.lower().strip() for a in q['correctAnswers']}
+    for w in q['wrongAnswers']:
+        if w.lower().strip() in correct_set:
+            overlaps += 1
+            print(f"  OVERLAP: Q{q['id']} correct '{q['correctAnswers']}' has wrong '{w}'")
+if overlaps == 0:
+    print("No overlaps between correct and wrong answers!")
+
+# Verify distractor counts
 bad = 0
 for q in output['questions']:
-    if len(q['wrongAnswers']) < (1 if q['wrongAnswers'] == ['True'] or q['wrongAnswers'] == ['False'] else 3):
+    min_needed = 1 if q['type'] == 'tf' else 2
+    if len(q['wrongAnswers']) < min_needed:
         bad += 1
         print(f"  WARNING: Q{q['id']} has only {len(q['wrongAnswers'])} distractors")
 if bad == 0:

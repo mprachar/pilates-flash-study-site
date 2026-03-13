@@ -402,6 +402,21 @@ body {
   opacity: 1;
 }
 
+/* Multi-select answers */
+.answer-btn.multi-select .answer-letter {
+  border-radius: 4px;
+}
+
+.answer-btn.multi-select.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.answer-btn.multi-select.selected .answer-letter {
+  background: var(--primary);
+  color: white;
+}
+
 /* Explanation */
 .explanation {
   margin-top: 16px;
