@@ -1,3 +1,6 @@
 node_modules/
 dist/
 .env
+data/images/
+data/*.xlsx
+data/questions-raw.json
