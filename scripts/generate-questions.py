@@ -8,10 +8,53 @@ import json
 import random
 import shutil
 import os
+import re as re_mod
+from zipfile import ZipFile
+import xml.etree.ElementTree as ET
 
 # Load raw data
 with open('data/questions-raw.json') as f:
     raw = json.load(f)
+
+# ── BUILD CORRECT IMAGE-ROW MAP FROM XLSX XML ──
+# openpyxl's _images order doesn't reliably match media file names.
+# Parse the drawing XML + rels to get the authoritative mapping.
+
+IMAGE_ROW_MAP = {}  # row -> image filename
+
+with ZipFile('data/quiz-study-guide.xlsx', 'r') as z:
+    # Parse relationship IDs -> image filenames
+    rid_to_file = {}
+    rels_tree = ET.parse(z.open('xl/drawings/_rels/drawing1.xml.rels'))
+    for rel in rels_tree.getroot():
+        rid = rel.attrib.get('Id', '')
+        target = rel.attrib.get('Target', '')
+        if 'image' in target.lower():
+            rid_to_file[rid] = os.path.basename(target)
+
+    # Parse anchors: row -> rId -> image filename
+    nsmap = {
+        'xdr': 'http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing',
+        'a': 'http://schemas.openxmlformats.org/drawingml/2006/main',
+        'r': 'http://schemas.openxmlformats.org/officeDocument/2006/relationships',
+    }
+    drawing_tree = ET.parse(z.open('xl/drawings/drawing1.xml'))
+    anchors = (drawing_tree.getroot().findall('.//xdr:twoCellAnchor', nsmap) +
+               drawing_tree.getroot().findall('.//xdr:oneCellAnchor', nsmap))
+
+    for anchor in anchors:
+        from_el = anchor.find('xdr:from', nsmap)
+        if from_el is None:
+            continue
+        row = int(from_el.find('xdr:row', nsmap).text)
+        blip = anchor.find('.//a:blip', nsmap)
+        if blip is None:
+            continue
+        embed = blip.attrib.get('{http://schemas.openxmlformats.org/officeDocument/2006/relationships}embed', '')
+        if embed in rid_to_file:
+            IMAGE_ROW_MAP[row] = rid_to_file[embed]
+
+print(f"Built image map: {len(IMAGE_ROW_MAP)} images")
 
 # ── DISTRACTOR POOLS ──
 # Organized by topic area for plausible wrong answers
@@ -442,14 +485,110 @@ def build_explanation(question_text, correct_answer, q_type):
     return f"The correct answer is: {correct_answer}"
 
 
+# ── RE-PARSE QUESTIONS FROM XLSX WITH CORRECT IMAGE MAPPING ──
+# Don't trust the raw JSON's image field - rebuild from XML-based IMAGE_ROW_MAP
+
+import openpyxl
+wb = openpyxl.load_workbook('data/quiz-study-guide.xlsx')
+ws = wb['Sheet1']
+
+sections_def = [
+    (1, 358, 'general-anatomy', 'General Anatomy & Movement'),
+    (359, 555, 'muscle-contractions', 'Muscle Contractions'),
+    (556, 655, 'forearm', 'Muscles That Move the Forearm'),
+    (656, 803, 'scapula', 'Muscles That Move the Scapula'),
+    (804, 993, 'shoulder', 'Muscles That Move the Shoulder'),
+    (994, 1081, 'knee', 'Muscles That Move the Knee'),
+    (1082, 1181, 'ankle', 'Muscles That Move the Ankle'),
+    (1182, 1440, 'hip', 'Muscles That Move the Hip'),
+    (1441, 1567, 'neck', 'Muscles That Move the Neck'),
+    (1568, 1704, 'trunk', 'Muscles That Move the Trunk'),
+    (1705, 1771, 'breathing', 'Muscles Involved With Breathing'),
+]
+
+parsed_questions = []
+parsed_sections = []
+q_id = 0
+
+for start, end, slug, name in sections_def:
+    current_q = None
+    questions_in_section = []
+
+    for row_idx in range(start, end + 1):
+        cell = ws.cell(row=row_idx, column=1)
+        val = cell.value
+        if val is None:
+            continue
+        val = str(val).strip()
+
+        if cell.fill and cell.fill.start_color:
+            rgb = str(cell.fill.start_color.rgb)
+            if 'FFFF' in rgb.upper() and not re_mod.match(r'^Question\s+\d+', val):
+                continue
+
+        m = re_mod.match(r'^Question\s+(\d+)', val)
+        if m:
+            if current_q:
+                questions_in_section.append(current_q)
+            q_id += 1
+            current_q = {
+                'id': q_id,
+                'section': slug,
+                'questionNum': int(m.group(1)),
+                'text': '',
+                'answers': [],
+                'image': None,
+                'type': 'single',
+                '_startRow': row_idx
+            }
+        elif current_q:
+            if val == 'True or False':
+                current_q['type'] = 'tf'
+            elif '(Select all that apply)' in val:
+                current_q['type'] = 'multi'
+                current_q['text'] = val
+            elif not current_q['text']:
+                current_q['text'] = val
+            else:
+                current_q['answers'].append(val)
+
+    if current_q:
+        questions_in_section.append(current_q)
+
+    # Map images using the CORRECT XML-based IMAGE_ROW_MAP
+    for idx, q in enumerate(questions_in_section):
+        q_start = q['_startRow']
+        q_end = questions_in_section[idx + 1]['_startRow'] if idx + 1 < len(questions_in_section) else end + 1
+
+        for img_row, img_file in IMAGE_ROW_MAP.items():
+            if q_start <= img_row < q_end:
+                q['image'] = img_file
+                break
+
+        del q['_startRow']
+
+    parsed_sections.append({'id': slug, 'name': name, 'questionCount': len(questions_in_section)})
+    parsed_questions.extend(questions_in_section)
+
+print(f"Parsed {len(parsed_questions)} questions, {sum(1 for q in parsed_questions if q['image'])} with images")
+
+# Rebuild section_answers from fresh parse
+section_answers = {}
+for q in parsed_questions:
+    sec = q['section']
+    if sec not in section_answers:
+        section_answers[sec] = set()
+    for ans in q['answers']:
+        section_answers[sec].add(ans)
+
 # ── BUILD OUTPUT ──
 output = {
     'version': 1,
-    'sections': raw['sections'],
+    'sections': parsed_sections,
     'questions': [],
 }
 
-for q in raw['questions']:
+for q in parsed_questions:
     correct = q['answers'][0] if q['answers'] else ''
     if not correct:
         continue
@@ -471,7 +610,6 @@ for q in raw['questions']:
     # Make sure we have at least 3 distractors (or 1 for T/F)
     min_distractors = 1 if q['type'] == 'tf' else 3
     if len(distractors) < min_distractors:
-        # Pad with generic plausible answers
         padding = ['None of the above', 'All of the above', 'Cannot be determined']
         for p in padding:
             if len(distractors) >= min_distractors:
