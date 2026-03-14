@@ -612,6 +612,39 @@ for q in parsed_questions:
     for ans in q['answers']:
         section_answers[sec].add(ans)
 
+# ── FIX "ALL ANSWERS ARE CORRECT" QUESTIONS ──
+# These questions in the XLSX have "All Answers are Correct" as the answer but don't
+# list what the actual answer choices are. Convert to proper multi-select with real answers.
+ALL_ANSWERS_OVERRIDES = {
+    'Muscles function to:': {
+        'correctAnswers': ['stabilize something', 'prevent something from moving', 'make something move'],
+        'wrongAnswers': ['Produce red blood cells', 'Store calcium', 'Transmit nerve impulses'],
+    },
+    'Which of the following muscles inserts on the greater trochanter?': {
+        'correctAnswers': ['Gluteus medius', 'Gluteus minimus', 'Piriformis'],
+        'wrongAnswers': ['Gluteus maximus', 'Sartorius', 'Gracilis'],
+    },
+    'Which muscle acts to laterally flex the head to the same side?': {
+        'correctAnswers': ['Sternocleidomastoid', 'Scalenes', 'Splenius capitis', 'Splenius cervicis'],
+        'wrongAnswers': ['Trapezius', 'Semispinalis capitis', 'Longus colli'],
+    },
+    'The diaphragm:': {
+        'correctAnswers': ['Is the primary muscle of inspiration', 'Separates the thoracic and abdominal cavities', 'Is dome-shaped at rest'],
+        'wrongAnswers': ['Is an accessory breathing muscle', 'Contracts during exhalation only', 'Is located in the abdominal cavity'],
+    },
+}
+
+for q in parsed_questions:
+    if any(a.lower().startswith('all') and 'correct' in a.lower() for a in q['answers']):
+        override = ALL_ANSWERS_OVERRIDES.get(q['question'])
+        if override:
+            q['answers'] = override['correctAnswers']
+            q['_wrongAnswers'] = override['wrongAnswers']
+            q['type'] = 'multi'
+    # Also strip 'All of the above' from multi-answer correct lists
+    if q['type'] == 'multi':
+        q['answers'] = [a for a in q['answers'] if a.lower() not in ('all of the above', 'all answers are correct')]
+
 # ── BUILD OUTPUT ──
 output = {
     'version': 1,
@@ -634,69 +667,73 @@ for q in parsed_questions:
         else:
             distractors = ['True']
     elif q['type'] == 'multi':
-        # Multi-answer: generate distractors that are NOT any of the correct answers
-        # and are in the same category as the correct answers
-        correct_lower_set = {a.lower().strip() for a in correct_answers}
-        pool = SECTION_POOLS.get(q['section'], {})
+        # Use pre-set wrong answers if available (from ALL_ANSWERS_OVERRIDES)
+        if '_wrongAnswers' in q:
+            distractors = q['_wrongAnswers']
+        else:
+            # Multi-answer: generate distractors that are NOT any of the correct answers
+            # and are in the same category as the correct answers
+            correct_lower_set = {a.lower().strip() for a in correct_answers}
+            pool = SECTION_POOLS.get(q['section'], {})
 
-        # Classify first correct answer to find the right category
-        answer_category = classify_answer(correct_answers[0], pool)
+            # Classify first correct answer to find the right category
+            answer_category = classify_answer(correct_answers[0], pool)
 
-        # Get same-category candidates from pool + section
-        candidates = []
-        seen = set(correct_lower_set)
+            # Get same-category candidates from pool + section
+            candidates = []
+            seen = set(correct_lower_set)
 
-        # Same category from pool first
-        if answer_category and answer_category in pool:
-            for v in pool[answer_category]:
-                vl = v.lower().strip()
-                if vl not in seen:
-                    candidates.append(v)
-                    seen.add(vl)
+            # Same category from pool first
+            if answer_category and answer_category in pool:
+                for v in pool[answer_category]:
+                    vl = v.lower().strip()
+                    if vl not in seen:
+                        candidates.append(v)
+                        seen.add(vl)
 
-        # Same category from section answers
-        for a in section_correct:
-            al = a.lower().strip()
-            if al not in seen:
-                a_cat = classify_answer(a, pool)
-                if a_cat == answer_category:
+            # Same category from section answers
+            for a in section_correct:
+                al = a.lower().strip()
+                if al not in seen:
+                    a_cat = classify_answer(a, pool)
+                    if a_cat == answer_category:
+                        candidates.append(a)
+                        seen.add(al)
+
+            # Any remaining section answers
+            for a in section_correct:
+                al = a.lower().strip()
+                if al not in seen:
                     candidates.append(a)
                     seen.add(al)
 
-        # Any remaining section answers
-        for a in section_correct:
-            al = a.lower().strip()
-            if al not in seen:
-                candidates.append(a)
-                seen.add(al)
+            random.shuffle(candidates)
+            # Need enough wrong answers so total options >= 4 (or at least 2 wrong)
+            needed = max(2, 4 - len(correct_answers))
+            distractors = candidates[:needed]
 
-        random.shuffle(candidates)
-        # Need enough wrong answers so total options >= 4 (or at least 2 wrong)
-        needed = max(2, 4 - len(correct_answers))
-        distractors = candidates[:needed]
+            if len(distractors) < needed:
+                # Pull more from all pool values
+                all_pool = []
+                for values in pool.values():
+                    all_pool.extend(values)
+                random.shuffle(all_pool)
+                for c in all_pool:
+                    if len(distractors) >= needed:
+                        break
+                    cl = c.lower().strip()
+                    if cl not in seen:
+                        distractors.append(c)
+                        seen.add(cl)
 
-        if len(distractors) < needed:
-            # Pull more from all pool values
-            all_pool = []
-            for values in pool.values():
-                all_pool.extend(values)
-            random.shuffle(all_pool)
-            for c in all_pool:
-                if len(distractors) >= needed:
-                    break
-                cl = c.lower().strip()
-                if cl not in seen:
-                    distractors.append(c)
-                    seen.add(cl)
-
-        if len(distractors) < needed:
-            padding = ['None of the above', 'Cannot be determined']
-            for p in padding:
-                if len(distractors) >= needed:
-                    break
-                if p.lower() not in seen:
-                    distractors.append(p)
-        distractors = distractors[:needed]
+            if len(distractors) < needed:
+                padding = ['None of the above', 'Cannot be determined']
+                for p in padding:
+                    if len(distractors) >= needed:
+                        break
+                    if p.lower() not in seen:
+                        distractors.append(p)
+            distractors = distractors[:needed]
     else:
         # Single answer
         correct_answers = [correct_answers[0]]
